@@ -1,0 +1,244 @@
+t <html><head><title>Lineair Correction</title>
+t </head>
+i pg_header.inc
+t <h2 align=center><br>Lineair Correction ch1</h2>
+t <form action=lineaircor.cgi method=post name=cgi>
+t <input type=hidden value="ca" name=pg>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>Point nr</th>
+t  <th width=30%>ADC</th>
+t  <th width=30%>Weight</th>
+t  <th width=20%></th>
+t </tr>
+t <tr><td>Pt1</td><td>
+c PCA01  <input type=text name=ca01 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA02  <input type=text name=ca02 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>Pt2</td><td>
+c PCA03  <input type=text name=ca03 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA04  <input type=text name=ca04 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt2Ch1="></td>
+t </tr>
+t <tr><td>Pt3</td><td>
+c PCA05  <input type=text name=ca05 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA06  <input type=text name=ca06 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt3Ch1="></td>
+t </tr>
+t <tr><td>Pt4</td><td>
+c PCA07  <input type=text name=ca07 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA08  <input type=text name=ca08 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt4Ch1="></td>
+t </tr>
+t <tr><td>Pt5</td><td>
+c PCA09  <input type=text name=ca09 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA10  <input type=text name=ca10 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt5Ch1="></td>
+t </tr>
+t <tr><td>Pt6</td><td>
+c PCA11  <input type=text name=ca11 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA12  <input type=text name=ca12 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt6Ch1="></td>
+t </tr>
+t <tr><td>Pt7</td><td>
+c PCA13  <input type=text name=ca13 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA14  <input type=text name=ca14 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt7Ch1="></td>
+t </tr> 
+t <tr><td>Pt8</td><td>
+c PCA15  <input type=text name=ca15 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA16  <input type=text name=ca16 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt8Ch1="></td>
+t </tr>
+t <tr><td>Pt9</td><td>
+c PCA17  <input type=text name=ca17 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA18  <input type=text name=ca18 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt9Ch1="></td>
+t </tr>
+t <tr><td>Pt10</td><td>
+c PCA19  <input type=text name=ca19 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA20  <input type=text name=ca20 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t </tr>
+t <tr><td></td><td>Calibration Points CH1</td><td>	
+t <select 
+c PEEWS  %s name="cp01">	 
+c PCPT100O <option value=0 %s>2</option>
+c PCPT101O <option value=1 %s>3</option> 
+c PCPT102O <option value=2 %s>4</option>
+c PCPT103O <option value=3 %s>5</option>
+c PCPT104O <option value=4 %s>6</option>
+c PCPT105O <option value=5 %s>7</option> 
+c PCPT106O <option value=6 %s>8</option>
+c PCPT107O <option value=7 %s>9</option>
+c PCPT108O <option value=8 %s>10</option> 
+t </select>
+t </td></tr>
+t </font></table>
+t <td><input type=submit value="Add point" name="Addpoint1="></td>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </form>
+t <h2 align=center><br>Lineair Correction ch2</h2>
+t <form action=lineaircor.cgi method=post name=cgi>
+t <input type=hidden value="ca" name=pg>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>Point nr</th>
+t  <th width=30%>ADC</th>
+t  <th width=30%>Weight</th>
+t  <th width=20%></th>
+t </tr>
+t <tr><td>Pt1</td><td>
+c PCA21  <input type=text name=ca21 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA22  <input type=text name=ca22 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t </tr>	
+t <tr><td>Pt2</td><td>
+c PCA23  <input type=text name=ca23 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA24  <input type=text name=ca24 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt2Ch2="></td>
+t </tr>
+t <tr><td>Pt3</td><td>
+c PCA25  <input type=text name=ca25 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA26  <input type=text name=ca26 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt3Ch2="></td>
+t </tr>
+t <tr><td>Pt4</td><td>
+c PCA27  <input type=text name=ca27 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA28  <input type=text name=ca28 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt4Ch2="></td>
+t </tr>
+t <tr><td>Pt5</td><td>
+c PCA29  <input type=text name=ca29 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA30  <input type=text name=ca30 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt5Ch2="></td>
+t </tr>
+t <tr><td>Pt6</td><td>
+c PCA31  <input type=text name=ca31 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA32  <input type=text name=ca32 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt6Ch2="></td>
+t </tr>
+t <tr><td>Pt7</td><td>
+c PCA33  <input type=text name=ca33 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA34  <input type=text name=ca34 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt7Ch2="></td>
+t </tr> 
+t <tr><td>Pt8</td><td>
+c PCA35  <input type=text name=ca35 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA36  <input type=text name=ca36 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt8Ch2="></td>
+t </tr>
+t <tr><td>Pt9</td><td>
+c PCA37  <input type=text name=ca37 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA38  <input type=text name=ca38 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t <td><input type=submit value="Delete" name="DelPnt9Ch2="></td>
+t </tr>
+t <tr><td>Pt10</td><td>
+c PCA39  <input type=text name=ca39 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA40  <input type=text name=ca40 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td>
+t </tr>
+t <tr><td></td><td>Calibration Points CH2</td><td>	
+t <select 
+c PEEWS  %s name="cp02">	 
+c PCPT200O <option value=0 %s>2</option>
+c PCPT201O <option value=1 %s>3</option> 
+c PCPT202O <option value=2 %s>4</option>
+c PCPT203O <option value=3 %s>5</option>
+c PCPT204O <option value=4 %s>6</option>
+c PCPT205O <option value=5 %s>7</option> 
+c PCPT206O <option value=6 %s>8</option>
+c PCPT207O <option value=7 %s>9</option>
+c PCPT208O <option value=8 %s>10</option> 
+t </select>
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td>
+t <td><input type=submit value="Add point" name="Addpoint2="></td>
+t </tr>
+t </table>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.

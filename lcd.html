@@ -1,0 +1,16 @@
+t <html><head><title>LCD Control</title></head>
+t <form action=lcd.cgi method=post name=cgi>
+t <input type=hidden value="lcd" name=pg>
+t <table border=0 width=99%><font size="3">
+t <tr>
+c f 1 <td><input type=text name=lcd1 size=16 maxlength=16 value="%s"></td></tr>
+t <tr>
+c f 2 <td><input type=text name=lcd2 size=16 maxlength=16 value="%s"></td></tr>
+t <tr>
+c PDS02  <td><input type=text name=lcd3 size=16 maxlength=16 value="%s"></td></tr>
+# Here begin button definitions
+t <p align=center>
+t <input type=submit name=set value="Send" id="sbm">
+t <input type=reset value="Undo">
+t </p></form>
+. End of script must be closed with period.

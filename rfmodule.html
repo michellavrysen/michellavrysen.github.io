@@ -1,0 +1,69 @@
+t <html><head><title>RF module setup</title></head>
+i pg_header.inc
+t <h2 align=center><br>RF MODULE MENU</h2>
+t <form action=rfmodule.cgi method=post name=cgi>
+t <input type=hidden value="rf" name=pg>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>RF channel</td><td>	
+c PRF01  <input type=text name=rf01 value="%s" size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>1</td><td>RF power</td><td>	
+c PRF02  <input type=text name=rf02 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>1</td><td>data rate</td><td>	
+c PRF03  <input type=text name=rf03 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>1</td><td>preamble leg</td><td>	
+c PRF04  <input type=text name=rf04 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>1</td><td>package length</td><td>	
+c PRF05  <input type=text name=rf05 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>6</td><td>package timeout</td><td>
+c PRF06  <input type=text name=rf06 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>7</td><td>package end char</td><td>
+c PRF07  <input type=text name=rf07 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>8</td><td>mac mode</td><td>
+c PRF08  <input type=text name=rf08 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>9</td><td>adress mode</td><td>
+c PRF09  <input type=text name=rf09 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>10</td><td>CRC mode</td><td>
+c PRF10  <input type=text name=rf10 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>11</td><td>unique ID</td><td>
+c PRF11  <input type=text name=rf11 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>12</td><td>system ID</td><td>
+c PRF12  <input type=text name=rf12 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>13</td><td>destination ID</td><td>
+c PRF13  <input type=text name=rf13 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>14</td><td>broadcasting ID</td><td>
+c PRF14  <input type=text name=rf14 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>15</td><td>serial baudrate</td><td>
+c PRF15  <input type=text name=rf15 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>16</td><td>serial handshake</td><td>
+c PRF16  <input type=text name=rf16 value="%s" size=18 maxlength=8>
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.

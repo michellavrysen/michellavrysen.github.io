@@ -1,0 +1,39 @@
+t <form>
+t <text>
+t <id>dyn_up_ch1</id>
+c PDYU1 <value>%s</value>
+t </text>
+t <text>
+t <id>dyn_down_ch1</id>
+c PDYD1 <value>%s</value>
+t </text>
+t <text>
+t <id>tag_ch1</id>
+c PTAG1 <value>%s</value>
+t </text>
+t <text>
+t <id>dyn_up_ch2</id>
+c PDYU2 <value>%s</value>
+t </text>
+t <text>
+t <id>dyn_down_ch2</id>
+c PDYD2 <value>%s</value>
+t </text>
+t <text>
+t <id>tag_ch2</id>
+c PTAG2 <value>%s</value>
+t </text>
+t <text>
+t <id>dyn_up_ch3</id>
+c PDYU3 <value>%s</value>
+t </text>
+t <text>
+t <id>dyn_down_ch3</id>
+c PDYD3 <value>%s</value>
+t </text>
+t <text>
+t <id>tag_ch3</id>
+c PTAG3 <value>%s</value>
+t </text>
+t </form>
+.

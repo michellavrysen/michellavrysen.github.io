@@ -1,0 +1,164 @@
+t <html><head><title>Digital Setup CH 1 + 2</title>
+t </head>
+i pg_header.inc
+t <h2 align=center><br>Digital Setup ch1+2</h2>
+t <form action=digitalsetupch12.cgi method=post name=cgi>
+t <input type=hidden value="ds" name=pg3>
+t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>decimal point</td><td>	
+t <select 
+c PEEWS  %s name="ds41">		
+c PDS4100O <option value=0 %s>0</option>
+c PDS4101O <option value=1 %s>0.0</option> 
+c PDS4102O <option value=2 %s>0.00</option>
+c PDS4103O <option value=3 %s>0.000</option>
+c PDS4104O <option value=4 %s>0.0000</option>
+c PDS4105O <option value=5 %s>0.00000</option>
+t </select>
+t </td></tr>	
+t <tr><td>2</td><td>display division</td><td>	
+t <select 
+c PEEWS  %s name="ds42">	
+c PDS4200O <option value=0 %s>1</option>
+c PDS4201O <option value=1 %s>2</option> 
+c PDS4202O <option value=2 %s>5</option>
+c PDS4203O <option value=3 %s>10</option>
+c PDS4204O <option value=4 %s>20</option>
+c PDS4205O <option value=5 %s>50</option>
+c PDS4206O <option value=6 %s>100</option>
+c PDS4207O <option value=7 %s>200</option>
+c PDS4208O <option value=8 %s>MULTISCALE</option>
+c PDS4209O <option value=9 %s>MAX e ON</option>
+t </select>
+t </td></tr>
+t <tr><td>3</td><td>capacity</td><td>	
+c PDS43  <input type=text name=ds43 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>4</td><td>stable tolerance</td><td>	
+t <select 
+c PEEWS  %s name="ds44">	
+c PDS4400O <option value=0 %s>0.5e</option>
+c PDS4401O <option value=1 %s>1e</option> 
+c PDS4402O <option value=2 %s>1.5e</option>
+c PDS4403O <option value=3 %s>2e</option>
+c PDS4404O <option value=4 %s>2.5e</option>
+t </select>
+t </td></tr>
+t <tr><td>5</td><td>stable time</td><td>		
+t <select 
+c PEEWS  %s name="ds45">	
+c PDS4500O <option value=0 %s>1s</option>
+c PDS4501O <option value=1 %s>2s</option> 
+c PDS4502O <option value=2 %s>3s</option>
+c PDS4503O <option value=3 %s>4s</option>
+c PDS4504O <option value=4 %s>5s</option>
+t </select>
+t </td></tr>
+t <tr><td>6</td><td>digital filter</td><td>
+c PDS46  <input type=text name=ds46 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>7</td><td>zero tracking</td><td>
+t <select 
+c PEEWS  %s name="ds47">	 
+c PDS4700O <option value=0 %s>OFF</option>
+c PDS4701O <option value=1 %s>0.2e</option> 
+c PDS4702O <option value=2 %s>0.3e</option>
+c PDS4703O <option value=3 %s>0.5e</option>
+c PDS4704O <option value=4 %s>1e</option>
+c PDS4701O <option value=5 %s>1.5e</option> 
+c PDS4702O <option value=6 %s>2e</option>
+c PDS4703O <option value=7 %s>2.5e</option>
+c PDS4704O <option value=8 %s>3e</option>
+t </select>
+t </td></tr> 
+t <tr><td>8</td><td>tracking time</td><td>
+t <select 
+c PEEWS  %s name="ds48">	
+c PDS4800O <option value=0 %s>1s</option>
+c PDS4801O <option value=1 %s>2s</option> 
+c PDS4802O <option value=2 %s>3s</option>
+t </select>
+t </td></tr>
+t <tr><td>9</td><td>startup mode</td><td>
+t <select 
+c PEEWS  %s name="ds49">	
+c PDS4900O <option value=0 %s>2 procent + AZ</option>
+c PDS4901O <option value=1 %s>full+AZ</option> 
+c PDS4902O <option value=2 %s>full</option>
+c PDS4903O <option value=3 %s>tare Mem</option>
+t </select>
+t </td></tr>
+t <tr><td>10</td><td>backlight mode</td><td>
+c PDS50  <input type=text name=ds50 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>11</td><td>print time&date</td><td>
+c PDS51  <input type=text name=ds51 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>12</td><td>minimun negative</td><td>
+c PDS52  <input type=text name=ds52 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>13</td><td>tilt-angle comp</td><td>
+t <select 
+c PEEWS  %s name="ds53">	
+c PDS5300O <option value=0 %s>OFF</option>
+c PDS5301O <option value=1 %s>INP.1 NO</option> 
+c PDS5302O <option value=2 %s>INP.1 NC</option>
+c PDS5303O <option value=3 %s>INP.2 NO</option>
+c PDS5304O <option value=4 %s>INP.2 NC</option>
+c PDS5305O <option value=5 %s>INP.3 NO</option> 
+c PDS5306O <option value=6 %s>INP.3 NC</option>
+c PDS5307O <option value=7 %s>INCLINO.</option>
+c PDS5308O <option value=8 %s>CHANNEL2</option>
+t </select>
+t </td></tr> 
+t <tr><td>14</td><td>auto power off</td><td>
+c PDS54  <input type=text name=ds54 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>15</td><td>active channel</td><td>
+t <select 
+c PEEWS  %s name="ds55">	
+c PDS5500O <option value=0 %s>CHANNEL1</option>
+c PDS5501O <option value=1 %s>CHANNEL2</option> 
+c PDS5502O <option value=2 %s>CH1+CH2</option>
+c PDS5503O <option value=3 %s>CH1&CH2</option>
+c PDS5504O <option value=4 %s>CH1&CH2S</option>
+t </select>
+t </td></tr>
+t <tr><td>16</td><td>****************</td><td>
+c PDS56  <input type=text name=ds56 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>17</td><td>****************</td><td>
+c PDS57  <input type=text name=ds57 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>18</td><td>auto power off</td><td>
+c PDS58  <input type=text name=ds58 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>19</td><td>****************</td><td>
+c PDS59  <input type=text name=ds59 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>20</td><td>test mode X10</td><td>
+t <select 
+c PEEWS  %s name="ds60">	
+c PDS6000O <option value=0 %s>user</option>
+c PDS6001O <option value=1 %s>test</option> 
+t </select>
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm2">
+t </p></td></tr></table>
+t </center>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.

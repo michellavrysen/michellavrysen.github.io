@@ -1,0 +1,5 @@
+index.htm, keil.gif, nxp_logo.gif, llblue.jpg, pabb.gif, home.png,
+network.cgi, network1.cgi, digitalsetup.cgi, digitalsetupch2.cgi, digitalsetupch12.cgi, tcp.cgi, system.cgi, language.cgi,lcd.cgi,
+ad.cgi, hoek.cgi, hoek_ch2.cgi, dyn.cgi, hoek_multi.cgi, hoek_multi_ch2.cgi, pg_header.inc, pg_footer.inc, xml_http.js, serialport.cgi, serialport34.cgi,
+analogsetup.cgi,angle.cgi,inoutsetup.cgi,lineaircal.cgi,lineaircor.cgi,lineaircal2.cgi,lineaircor2.cgi,multiscale.cgi,optionsetup.cgi,rfmodule.cgi,sddrive.cgi,timedate.cgi,
+ad.cgx, hoek.cgx, dyn.cgx, hoek_ch2.cgx, buttons.cgx to Web.c nopr root(Web)

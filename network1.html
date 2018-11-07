@@ -1,0 +1,103 @@
+t <html><head><title>Network Menu</title>
+t </head>
+i pg_header.inc
+t <h2 align=center><br>Network Setup</h2> 
+t <form action=network1.cgi method=post name=cgi>
+t <input type=hidden value="ns" name=pg>
+t <table border=10 width=600>
+t <font size="3">
+t <tr bgcolor=#aaccff>
+t <th width=14%>nr</th>
+t <th width=40%>Setup</th>
+t <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>IP adress</td><td>
+c PNW01  <input type=text name=nw01 value="%s" size=20 maxlength=20>
+t </td></tr>
+t <tr><td>2</td><td>sub net masks</td><td>
+c PNW05  <input type=text name=nw02 value="%s" size=20 maxlength=20>
+t </td></tr>
+t <tr><td>3</td><td>DHCP Server</td><td>	
+t <select name="nw03">	 
+c PNW0900O <option value=0 %s>disable</option>
+c PNW0901O <option value=1 %s>enable</option> 
+t </select>
+t </td></tr>
+t <tr><td>4</td><td>Network enable</td><td>	
+t <select name="nw04">	 
+c PNW1000O <option value=0 %s>disable</option>
+c PNW1001O <option value=1 %s>enable</option> 
+t </select>
+t </td></tr>
+t <tr><td>5</td><td>Mac adress</td><td>
+c PNW11  <input type=text name=nw05 value="%s" size=20 maxlength=20>
+t </td></tr>
+t <tr><td>6</td><td>Default Gateway</td><td>
+c PNW17  <input type=text name=nw06 value="%s" size=20 maxlength=20>
+t </td></tr>
+t <tr><td>7</td><td>Local host name</td><td>
+c PNW21  <input type=text align="left" name=nw07 value="%s" size=16 maxlength=20>
+t </td></tr>
+t <tr><td>8</td><td>Prim. DNS Server</td><td>
+c PNW37  <input type=text name=nw08 value="%s" size=20 maxlength=20>
+t </td></tr>
+t <tr><td>9</td><td>Sec. DNS Server</td><td>
+c PNW41  <input type=text name=nw09 value="%s" size=20 maxlength=20>
+t </td></tr>
+t <tr><td>10</td><td>PPP enable</td><td>	
+t <select name="nw10">	 
+c PNW4500O <option value=0 %s>disable</option>
+c PNW4501O <option value=1 %s>enable</option> 
+t </select>
+t </td></tr>
+t <tr><td>11</td><td>PPP Prim. DNS</td><td>
+c PNW46  <input type=text name=nw11 value="%s" size=20 maxlength=20>
+t </td></tr>
+t <tr><td>12</td><td>PPP Sec. DNS</td><td>
+c PNW50  <input type=text name=nw12 value="%s" size=20 maxlength=20>
+t </td></tr>
+t <tr><td>13</td><td>FTP enable</td><td>	
+t <select name="nw13">	 
+c PNW5400O <option value=0 %s>disable</option>
+c PNW5401O <option value=1 %s>enable</option> 
+t </select>
+t </td></tr>
+t <tr><td>14</td><td>FTP port nr.</td><td>
+c PNW55  <input type=text name=nw14 value="%s" size=20 maxlength=20>
+t </td></tr>
+t <tr><td>15</td><td>FTP enable Auth.</td><td>	
+t <select name="nw15">	 
+c PNW5600O <option value=0 %s>disable</option>
+c PNW5601O <option value=1 %s>enable</option> 
+t </select>
+t </td></tr>
+t <tr><td>16</td><td>FTP user name</td><td>
+c PNW57  <input type=text name=nw16 value="%s" size=16 maxlength=20 align="left">
+t </td></tr>
+t <tr><td>17</td><td>FTP password</td><td>
+c PNW73  <input type=text name=nw17 value="%s" size16 maxlength=20 align="left">
+t </td></tr>
+t <tr><td>18</td><td>SMTP enable</td><td>	
+t <select name="nw18">	 
+c PNW8900O <option value=0 %s>disable</option>
+c PNW8901O <option value=1 %s>enable</option> 
+t </select>
+t </td></tr>
+t <tr><td>19</td><td>SMTP Def. Output port</td><td>
+c PNW90  <input type=text name=nw19 value="%s" size=20 maxlength=20>
+t </td></tr>
+t <tr><td>20</td><td>TCP enable</td><td>	
+t <select name="nw20">	 
+c PNW9100O <option value=0 %s>disable</option>
+c PNW9101O <option value=1 %s>enable</option> 
+t </select>
+t </td></tr>
+t </table></font>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.

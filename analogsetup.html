@@ -1,0 +1,189 @@
+t <html><head><title>Analog Setup</title>
+t </head>
+i pg_header.inc
+t <h2 align=center><br>Analog Setup ch1</h2>
+t <form action=analogsetup.cgi method=post name=cgi>
+t <input type=hidden value="as" name=pg>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>amplifier</td><td>	
+t <select 
+c PEEWS  %s name="as01">	
+c PAS0100O <option value=0 %s>1</option>
+c PAS0101O <option value=1 %s>2</option> 
+c PAS0102O <option value=2 %s>4</option>
+c PAS0103O <option value=3 %s>8</option>
+c PAS0104O <option value=4 %s>16</option> 
+c PAS0105O <option value=5 %s>32</option>
+c PAS0106O <option value=6 %s>64</option> 
+c PAS0107O <option value=7 %s>128</option>
+t </select>
+t </td></tr>	
+t <tr><td>2</td><td>unpolair - bipolair</td><td>	
+t <select 
+c PEEWS  %s name="as02">	
+c PAS0200O <option value=0 %s>unipolar</option>
+c PAS0201O <option value=1 %s>bipolar</option> 
+t </select>
+t </td></tr>
+t <tr><td>3</td><td>DAC</td><td>	
+c PAS03  <input type=text name=as03 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>4</td><td>gain</td><td>	
+c PAS04  <input type=text name=as04 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>------</td><td>	
+t <select 
+c PEEWS  %s name="as05">	
+c PAS0500O <option value=0 %s>off</option>
+c PAS0501O <option value=1 %s>on</option> 
+t </select>
+t </td></tr>
+t <tr><td>6</td><td>input buffer</td><td>
+t <select 
+c PEEWS  %s name="as06">	
+c PAS0600O <option value=0 %s>off</option>
+c PAS0601O <option value=1 %s>on</option> 
+t </select>
+t </td></tr>
+t <tr><td>7</td><td>filter settings</td><td>
+t <select 
+c PEEWS  %s name="as07">	
+c PAS0700O <option value=0 %s>auto</option>
+c PAS0701O <option value=1 %s>fast</option> 
+c PAS0702O <option value=2 %s>Sinc²</option>
+c PAS0703O <option value=3 %s>Sinc³</option>
+t </select>
+t </td></tr> 
+t <tr><td>8</td><td>Data/s[10-960]</td><td>
+c PAS08  <input type=text name=as08 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>9</td><td>*****</td><td>
+c PAS09  <input type=text name=as09 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>10</td><td>minimum mV</td><td>
+c PAS10  <input type=text name=as10 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>11</td><td>maximum mV</td><td>
+c PAS11  <input type=text name=as11 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>12</td><td>adc counts</td><td>
+#c PAS12  <input type=text name=as12 value="%s" size=18 maxlength=8>
+c PAS12  %s
+t </td></tr>
+t <tr><td>13</td><td>net weight</td><td>
+#c PAS13  <input type=text name=as13 value="%s" size=18 maxlength=8>
+c PAS13  %s
+t </td></tr> 
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+t <h2 align=center><br>Analog Setup ch2</h2>
+t <form action=analogsetup.cgi method=post name=cgi>
+t <input type=hidden value="as" name=pg>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>amplifier</td><td>	
+t <select 
+c PEEWS  %s name="as21">	
+c PAS2100O <option value=0 %s>1</option>
+c PAS2101O <option value=1 %s>2</option> 
+c PAS2102O <option value=2 %s>4</option>
+c PAS2103O <option value=3 %s>8</option>
+c PAS2104O <option value=4 %s>16</option> 
+c PAS2105O <option value=5 %s>32</option>
+c PAS2106O <option value=6 %s>64</option> 
+c PAS2107O <option value=7 %s>128</option> 
+t </select>
+t </td></tr>	
+t <tr><td>2</td><td>unpolair - bipolair</td><td>	
+t <select 
+c PEEWS  %s name="as22">	
+c PAS2200O <option value=0 %s>unipolar</option>
+c PAS2201O <option value=1 %s>bipolar</option>  
+t </select>
+t </td></tr>
+t <tr><td>3</td><td>DAC</td><td>	
+c PAS23  <input type=text name=as23 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>4</td><td>gain</td><td>	
+c PAS24  <input type=text name=as24 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>------</td><td>	
+t <select 
+c PEEWS  %s name="as25">	
+c PAS2500O <option value=0 %s>off</option>
+c PAS2501O <option value=1 %s>on</option> 
+t </select>
+t </td></tr>
+t <tr><td>6</td><td>input buffer</td><td>
+t <select 
+c PEEWS  %s name="as26">	
+c PAS2600O <option value=0 %s>off</option>
+c PAS2601O <option value=1 %s>on</option> 
+t </select>
+t </td></tr>
+t <tr><td>7</td><td>filter settings</td><td>
+t <select 
+c PEEWS  %s name="as27">	
+c PAS2700O <option value=0 %s>auto</option>
+c PAS2701O <option value=1 %s>fast</option> 
+c PAS2702O <option value=2 %s>Sinc²</option>
+c PAS2703O <option value=3 %s>Sinc³</option>
+t </select>
+t </td></tr> 
+t <tr><td>8</td><td>Data/s[10-960]</td><td>
+c PAS28  <input type=text name=as28 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>9</td><td>****</td><td>
+c PAS29  <input type=text name=as29 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>10</td><td>minimum mV</td><td>
+c PAS30  <input type=text name=as30 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>11</td><td>maximum mV</td><td>
+c PAS31  <input type=text name=as31 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>12</td><td>adc counts</td><td>
+#c PAS32  <input type=text name=as32 value="%s" size=18 maxlength=8>
+c PAS32  %s
+t </td></tr>
+t <tr><td>13</td><td>net weight</td><td>
+#c PAS33  <input type=text name=as33 value="%s" size=18 maxlength=8>
+c PAS33  %s
+t </td></tr>  
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.

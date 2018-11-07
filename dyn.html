@@ -1,0 +1,72 @@
+t <html><head><title>Dynamic Weighing with Tags</title>
+t <script language=JavaScript type="text/javascript" src="xml_http.js"></script>
+t <script language=JavaScript type="text/javascript">
+# Define URL and refresh timeout
+t var formUpdate = new periodicObj("dyn.cgx", 500);
+t function plotADGraph() {
+t  adVal = document.getElementById("ad_value1").value;
+t  numVal = adVal;
+t  tableSize = (numVal*100/6000);
+t  document.getElementById("ad_table").style.width = (tableSize + '%');
+t }
+t function periodicUpdateAd() {
+t  if(document.getElementById("adChkBox").checked == true) {
+t   updateMultiple(formUpdate,plotADGraph);
+t   ad_elTime = setTimeout(periodicUpdateAd, formUpdate.period);
+t  }
+t  else
+t   clearTimeout(ad_elTime);
+t }
+t </script></head>
+i pg_header.inc
+t <h2 align="center"><br>Dynamic Weight</h2>
+t <form action="dyn.cgi" method="post" name="ad">
+t <input type="hidden" value="ad" name="pg">
+t <table border=20 width=100%><font size="3">
+t <tr style="background-color: #aaccff">
+t  <th width=25%>Channel</th>
+t  <th width=25%>Weigh Up</th>
+t  <th width=25%>Weigh Down</th>
+t  <th width=40%>Tag nb</th></tr>
+t <tr>
+t <td align="center">1</td>
+t <td align="center"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PDYU1 size="10" id="dyn_up_ch1" value="%s"></td>
+t <td align="center"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PDYD1 size="10" id="dyn_down_ch1" value="%s"></td>
+t <td align="center"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTAG1 size="20" id="tag_ch1" value="%s"></td>
+t </tr>
+t <tr>
+t <td align="center">2</td>
+t <td align="center"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PDYU2 size="10" id="dyn_up_ch2" value="%s"></td>
+t <td align="center"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PDYD2 size="10" id="dyn_down_ch2" value="%s"></td>
+t <td align="center"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTAG2 size="20" id="tag_ch2" value="%s"></td>
+t </tr>
+t <tr>
+t <td align="center">1+2</td>
+t <td align="center"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PDYU3 size="10" id="dyn_up_ch3" value="%s"></td>
+t <td align="center"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PDYD3 size="10" id="dyn_down_ch3" value="%s"></td>
+t <td align="center"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTAG3 size="20" id="tag_ch3" value="%s"></td>
+t </tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t <p align=center>
+t <input type=button value="Refresh" onclick="updateMultiple(formUpdate,plotADGraph)">
+t Periodic:<input type="checkbox" id="adChkBox" onclick="periodicUpdateAd()"  >
+t  <table width=660>
+t  <tr><td align="center">
+t  <input type=submit value="angle zero" name="anglezero=">
+t  </td></tr></table>
+t </p></form>
+i pg_footer.inc
+. End of script must be closed with period

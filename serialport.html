@@ -1,0 +1,257 @@
+t <html><head><title>Serial Port</title>
+t </head>
+i pg_header.inc
+t <h2 align=center><br>Serial Port1</h2>
+#t <center>
+t <form action=serialport.cgi method=post name=cgi>
+t <input type=hidden value="ss" name=pg>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>baudrate</td><td>	
+t <select 
+c PEEWS  %s name="ss01">	
+c PSS0100O <option value=0 %s>150</option>
+c PSS0101O <option value=1 %s>300</option> 
+c PSS0102O <option value=2 %s>600</option>
+c PSS0103O <option value=3 %s>1200</option>
+c PSS0104O <option value=4 %s>2400</option>
+c PSS0105O <option value=5 %s>4800</option>
+c PSS0106O <option value=6 %s>9600</option>
+c PSS0107O <option value=7 %s>19200</option>
+c PSS0108O <option value=8 %s>38400</option>
+c PSS0109O <option value=9 %s>57600</option>
+c PSS0110O <option value=10 %s>115200</option>
+t </select>		
+t </td></tr>	
+t <tr><td>2</td><td>parity</td><td>	
+t <select 
+c PEEWS  %s name="ss02">	
+c PSS0200O <option value=0 %s>none</option>
+c PSS0201O <option value=1 %s>odd</option> 
+c PSS0202O <option value=2 %s>even</option>
+c PSS0203O <option value=3 %s>mark</option>
+c PSS0204O <option value=4 %s>space</option> 
+t </select>
+t </td></tr>
+t <tr><td>3</td><td>handshake</td><td>	
+t <select 
+c PEEWS  %s name="ss03">	
+c PSS0300O <option value=0 %s>0</option>
+c PSS0301O <option value=1 %s>1</option> 
+c PSS0302O <option value=2 %s>2</option>
+t </select>
+t </td></tr>
+t <tr><td>4</td><td>char - del</td><td>	
+c PSS04  <input type=text name=ss04 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>type</td><td>	
+t <select 
+c PEEWS  %s name="ss05">	
+c PSS0500O <option value=0 %s>Star</option>
+c PSS0501O <option value=1 %s>Epson</option> 
+c PSS0502O <option value=2 %s>inp.</option>
+c PSS0503O <option value=3 %s>PC</option>
+c PSS0504O <option value=4 %s>Other</option>
+c PSS0505O <option value=5 %s>Analogic</option>
+c PSS0506O <option value=6 %s>Ext.Disp</option>
+c PSS0507O <option value=7 %s>Inclino</option>
+c PSS0508O <option value=8 %s>Thermsen</option>
+c PSS0509O <option value=9 %s>HitagCh1</option>
+c PSS0510O <option value=10 %s>HitagCh2</option>
+c PSS0511O <option value=11 %s>HitagCh3</option>
+c PSS0512O <option value=12 %s>TirisCh1</option> 
+c PSS0513O <option value=13 %s>TirisCh2</option>
+c PSS0514O <option value=14 %s>TirisCh3</option>
+c PSS0515O <option value=15 %s>--------</option>
+c PSS0516O <option value=16 %s>RF PRINT</option>
+c PSS0517O <option value=17 %s>EIJKEL--</option>
+c PSS0518O <option value=18 %s>EIJKEL</option>
+c PSS0519O <option value=19 %s>Robbe WB</option>
+c PSS0520O <option value=20 %s>SKYEPAD</option>
+c PSS0521O <option value=21 %s>SD-Drive</option>
+c PSS0522O <option value=22 %s>AE BOARD</option>
+c PSS0523O <option value=23 %s>SITBEBAT</option>
+t </select>
+t </td></tr>
+t <tr><td>6</td><td>databits</td><td>
+t <select 
+c PEEWS  %s name="ss06">	
+c PSS0600O <option value=0 %s>5</option>
+c PSS0601O <option value=1 %s>6</option> 
+c PSS0602O <option value=2 %s>7</option>
+c PSS0603O <option value=3 %s>8</option>
+t </select>
+t </td></tr>
+t <tr><td>7</td><td>mode</td><td>
+t <select 
+c PEEWS  %s name="ss07">	
+c PSS0700O <option value=0 %s>RS232</option>
+c PSS0701O <option value=1 %s>RS485</option> 
+t </select>
+t </td></tr> 
+t <tr><td>8</td><td>flash</td><td>
+t <select 
+c PEEWS  %s name="ss08">	
+c PSS0800O <option value=0 %s>OFF</option>
+c PSS0801O <option value=1 %s>Ticket1.txt</option> 
+c PSS0802O <option value=2 %s>Ticket2.txt</option>
+c PSS0803O <option value=3 %s>Ticket3.txt</option>
+c PSS0804O <option value=4 %s>Ticket4.txt</option>
+c PSS0805O <option value=5 %s>Ticket5.txt</option>
+c PSS0806O <option value=6 %s>Ticket6.txt</option>
+c PSS0807O <option value=7 %s>Ticket7.txt</option>
+c PSS0808O <option value=8 %s>Ticket8.txt</option>
+t </select>
+t </td></tr>
+t <tr><td>9</td><td>input</td><td>
+t <select 
+c PEEWS  %s name="ss09">	
+c PSS0900O <option value=0 %s>OFF</option>
+c PSS0901O <option value=1 %s>Inclino</option> 
+c PSS0902O <option value=2 %s>KEYB BE.</option>
+c PSS0903O <option value=3 %s>KEYB US.</option>
+t </select>
+t </td></tr>
+t <tr><td>10</td><td>card 1</td><td>
+c PSS10  <input type=text name=ss10 value="%s" 
+c PEEWS  %s size=8 maxlength=8>
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </form>
+t <h2 align=center><br>Serial Port2</h2>
+#t <center>
+t <form action=serialport.cgi method=post name=cgi>
+t <input type=hidden value="ss" name=pg>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>baudrate</td><td>	
+t <select 
+c PEEWS  %s name="ss11">	
+c PSS1100O <option value=0 %s>150</option>
+c PSS1101O <option value=1 %s>300</option> 
+c PSS1102O <option value=2 %s>600</option>
+c PSS1103O <option value=3 %s>1200</option>
+c PSS1104O <option value=4 %s>2400</option>
+c PSS1105O <option value=5 %s>4800</option>
+c PSS1106O <option value=6 %s>9600</option>
+c PSS1107O <option value=7 %s>19200</option>
+c PSS1108O <option value=8 %s>38400</option>
+c PSS1109O <option value=9 %s>57600</option>
+c PSS1110O <option value=10 %s>115200</option>
+t </select>
+t </td></tr>	
+t <tr><td>2</td><td>parity</td><td>	
+t <select 
+c PEEWS  %s name="ss12">	
+c PSS1200O <option value=0 %s>none</option>
+c PSS1201O <option value=1 %s>odd</option> 
+c PSS1202O <option value=2 %s>even</option>
+c PSS1203O <option value=3 %s>mark</option>
+c PSS1204O <option value=4 %s>space</option> 
+t </select>
+t </td></tr>
+t <tr><td>3</td><td>handshake</td><td>	
+t <select 
+c PEEWS  %s name="ss13">	
+c PSS1300O <option value=0 %s>0</option>
+c PSS1301O <option value=1 %s>1</option> 
+c PSS1302O <option value=2 %s>2</option>
+t </select>
+t </td></tr>
+t <tr><td>4</td><td>char - del</td><td>	
+c PSS14  <input type=text name=ss14 value="%s" 
+c PEEWS  %s size=3 maxlength=3>
+t </td></tr>
+t <tr><td>5</td><td>type</td><td>	
+t <select 
+c PEEWS  %s name="ss15">	
+c PSS1500O <option value=0 %s>Star</option>
+c PSS1501O <option value=1 %s>Epson</option> 
+c PSS1502O <option value=2 %s>inp.</option>
+c PSS1503O <option value=3 %s>PC</option>
+c PSS1504O <option value=4 %s>Other</option>
+c PSS1505O <option value=5 %s>Analogic</option>
+c PSS1506O <option value=6 %s>Ext.Disp</option>
+c PSS1507O <option value=7 %s>Inclino</option>
+c PSS1508O <option value=8 %s>Thermsen</option>
+c PSS1509O <option value=9 %s>HitagCh1</option>
+c PSS1510O <option value=10 %s>HitagCh2</option>
+c PSS1511O <option value=11 %s>HitagCh3</option>
+c PSS1512O <option value=12 %s>TirisCh1</option> 
+c PSS1513O <option value=13 %s>TirisCh2</option>
+c PSS1514O <option value=14 %s>TirisCh3</option>
+c PSS1515O <option value=15 %s>--------</option>
+c PSS1516O <option value=16 %s>RF PRINT</option>
+c PSS1517O <option value=17 %s>EIJKEL--</option>
+c PSS1518O <option value=18 %s>EIJKEL</option>
+c PSS1519O <option value=19 %s>Robbe WB</option>
+c PSS1520O <option value=20 %s>SKYEPAD</option>
+c PSS1521O <option value=21 %s>SD-Drive</option>
+c PSS1522O <option value=22 %s>AE BOARD</option>
+c PSS1523O <option value=23 %s>SITBEBAT</option> 
+t </select>
+t </td></tr>
+t <tr><td>6</td><td>databits</td><td>
+t <select 
+c PEEWS  %s name="ss16">	
+c PSS1600O <option value=0 %s>5</option>
+c PSS1601O <option value=1 %s>6</option> 
+c PSS1602O <option value=2 %s>7</option>
+c PSS1603O <option value=3 %s>8</option>
+t </select>
+t </td></tr>
+t <tr><td>7</td><td>mode</td><td>
+t <select 
+c PEEWS  %s name="ss17">	
+c PSS1700O <option value=0 %s>RS232</option>
+c PSS1701O <option value=1 %s>RS485</option> 
+t </select>
+t </td></tr> 
+t <tr><td>8</td><td>flash</td><td>
+t <select 
+c PEEWS  %s name="ss18">	
+c PSS1800O <option value=0 %s>OFF</option>
+c PSS1801O <option value=1 %s>Ticket1.txt</option> 
+c PSS1802O <option value=2 %s>Ticket2.txt</option>
+c PSS1803O <option value=3 %s>Ticket3.txt</option>
+c PSS1804O <option value=4 %s>Ticket4.txt</option>
+c PSS1805O <option value=5 %s>Ticket5.txt</option>
+c PSS1806O <option value=6 %s>Ticket6.txt</option>
+c PSS1807O <option value=7 %s>Ticket7.txt</option>
+c PSS1808O <option value=8 %s>Ticket8.txt</option> 
+t </select>
+t </td></tr>
+t <tr><td>9</td><td>input</td><td>
+t <select 
+c PEEWS  %s name="ss19">	
+c PSS1900O <option value=0 %s>OFF</option>
+c PSS1901O <option value=1 %s>Inclino</option> 
+c PSS1902O <option value=2 %s>KEYB BE.</option>
+c PSS1903O <option value=3 %s>KEYB US.</option>
+t </select>
+t </td></tr>
+t <tr><td>10</td><td>card 1</td><td>
+c PSS20  <input type=text name=ss20 value="%s" 
+c PEEWS  %s size=8 maxlength=8>
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.

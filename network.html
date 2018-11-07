@@ -1,0 +1,64 @@
+t <html><head><title>Network Settings</title>
+t <script language=JavaScript>
+t function changeConfirm(f){
+t  if(!confirm('Are you sure you want to change\nthe Network settings?')) return;
+t  f.submit();
+t }
+t </script></head>
+i pg_header.inc
+t <h4 align=center><br>Network Settings</h4>
+t <p><font size="2">Here you can change the system <b>Network Settings</b>.
+t  After you have changed the IP address, you need to change also the host IP address in 
+t  you Internet browser to re-connect to target. Make changes with <b>care</b> or you may
+t  permanently lose a connection until next hardware reset.<br><br></font></p>
+t <form action=network.cgi method=get name=cgi>
+t <input type=hidden value="net" name=pg>
+t <table border=0 width=99%><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=40%>Item</th>
+t  <th width=60%>Setting</th></tr>
+# Here begin data setting which is formatted in HTTP_CGI.C module
+t <tr><td><img src=pabb.gif>LAN IP Address</td>
+#c a i <td><input type=text name=ip value="%d.%d.%d.%d" size=18 maxlength=18></td></tr>
+t <tr><td><IMG SRC=pabb.gif>LAN Net Mask</td>
+c a m <td><input type=text name=msk value="%d.%d.%d.%d" size=18 maxlength=18></td></tr>
+t <tr><td><IMG SRC=pabb.gif>LAN DHCP Server</td><td>	
+t <select name="ns01">	
+c PNW0900O <option value=0 %s>DISABLE</option>
+c PNW0901O <option value=1 %s>ENABLE</option> 
+t </select>
+t </td></tr>
+t <tr><td><IMG SRC=pabb.gif>Default Gateway</td>
+c a g <td><input type=text name=gw value="%d.%d.%d.%d" size=18 maxlength=18></td></tr>
+t <tr><td><IMG SRC=pabb.gif>Primary DNS Server</td>
+c a p <td><input type=text name=pdns value="%d.%d.%d.%d" size=18 maxlength=18></td></tr>
+t <tr><td><IMG SRC=pabb.gif>Secondary DNS Server</td>
+c a s <td><input type=text name=sdns value="%d.%d.%d.%d" size=18 maxlength=18></td></tr>
+t </font></table>
+# Here begin button definitions
+t <p align=center>
+t <input type=button name=set value="Change" onclick="changeConfirm(this.form)">
+t <input type=reset value="Undo">
+t </p></form>
+t <h2 align=center><br>Tcp Socket online Status</h2>
+t <center>
+t <table border=0 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>Socket</th>
+t  <th width=20%>State</th>
+t  <th width=20%>Rem IP</th>
+t  <th width=16%>Rem Port</th>
+t  <th width=16%>Loc Port</th>
+t  <th width=14%>Timer</th>
+t </tr>
+c c
+t </font></table>
+t <form action=network.cgi method=post name=form1>
+t  <table width=660>
+t  <tr><td align="center">
+t  <input type=button value="Refresh" onclick="location='/network.cgi'">
+t  </td></tr></table>
+t  </center>
+i pg_footer.inc
+. End of script must be closed with period.
+

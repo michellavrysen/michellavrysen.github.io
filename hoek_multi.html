@@ -1,0 +1,274 @@
+t <html><head><title>AD Input</title>
+t <script language=JavaScript type="text/javascript" src="xml_http.js"></script>
+t <script language=JavaScript type="text/javascript">
+# Define URL and refresh timeout
+t var formUpdate = new periodicObj("hoek.cgx", 500);
+t function plotADGraph() {
+t  adVal = document.getElementById("ad_value1").value;
+t  numVal = adVal;
+t  tableSize = (numVal*100/6000);
+t  document.getElementById("ad_table").style.width = (tableSize + '%');
+t }
+t function periodicUpdateAd() {
+t  if(document.getElementById("adChkBox").checked == true) {
+t   updateMultiple(formUpdate,plotADGraph);
+t   ad_elTime = setTimeout(periodicUpdateAd, formUpdate.period);
+t  }
+t  else
+t   clearTimeout(ad_elTime);
+t }
+t </script></head>
+i pg_header.inc
+t <h2 align="center"><br>Angle Multipoint Setup ch1</h2>
+t <form action="hoek_multi.cgi" method="post" name="ad">
+t <input type="hidden" value="ad" name="pg">
+t <table border=20 width=99%><font size="3">
+t <tr style="background-color: #aaccff">
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th></tr>
+t <tr><td>1</td>
+t <td>X input</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS15 size="10" id="x_ch1" value="%s"></td></tr>
+t <tr><td>2</td>
+t <td>X value</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS16 size="10" id="xval_ch1" value="%s"></td></tr>
+t <tr><td>3</td>
+t <td>cos X</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS17 size="10" id="cosx_ch1" value="%s"></td></tr>
+t <tr><td>4</td>
+t <td>Y input</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS18 size="10" id="y_ch1" value="%s"></td>
+t </td></tr> 
+t <tr><td>5</td>
+t <td>Y value</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS19 size="10" id="yval_ch1" value="%s"></td></tr>
+t <tr><td>6</td>
+t <td>cos Y</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS20 size="10" id="cosy_ch1" value="%s"></td></tr>
+t <tr><td>7</td>
+t <td>weight ch1</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PNET1 size="10" id="weight_ch1" value="%s"></td></tr>
+t </font></table>
+t <table border=20 width=99%><font size="3">
+t <tr style="background-color: #aaccff">
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th></tr>
+t <tr><td>1</td><td>multipoint</td><td>	
+t <select 
+c PEEWS  %s name="mh01">	 
+c PMH0100O <option value=0 %s>1</option>
+c PMH0101O <option value=1 %s>2</option> 
+c PMH0102O <option value=2 %s>3</option>
+c PMH0103O <option value=3 %s>4</option>
+c PMH0104O <option value=4 %s>5</option>
+t </select>
+t </td></tr>
+t <tr><td>2</td><td>weight point 1</td><td>
+c PMH02  <input type=text name=mh02 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>3</td><td>-X correction point 1</td><td>	
+c PMH03  <input type=text name=mh03 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>4</td><td>zero X point 1</td><td>	
+c PMH04  <input type=text name=mh04 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>+X correction point 1</td><td>	
+c PMH05  <input type=text name=mh05 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>6</td><td>-Y correction point 1</td><td>	
+c PMH06  <input type=text name=mh06 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>7</td><td>zero Y point 1</td><td>	
+c PMH07  <input type=text name=mh07 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>8</td><td>+Y correction point 1</td><td>
+c PMH08  <input type=text name=mh08 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm1">
+t </p></td></tr></table></form>
+t <form action="hoek_multi.cgi" method="post" name="ad">
+t <table border=20 width=99%><font size="3">
+t <tr style="background-color: #aaccff">
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th></tr>
+t <tr><td>1</td><td>weight point2</td><td>
+c PMH09  <input type=text name=mh09 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>2</td><td>-X correction point 2</td><td>	
+c PMH10  <input type=text name=mh10 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>3</td><td>zero X point 2</td><td>	
+c PMH11  <input type=text name=mh11 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>4</td><td>+X correction point 2</td><td>	
+c PMH12  <input type=text name=mh12 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>-Y correction point 2</td><td>	
+c PMH13  <input type=text name=mh13 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>6</td><td>zero Y point 2</td><td>	
+c PMH14  <input type=text name=mh14 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>7</td><td>+Y correction point 2</td><td>
+c PMH15  <input type=text name=mh15 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm2">
+t </p></td></tr></table></form>
+t <form action="hoek_multi.cgi" method="post" name="ad">
+t <table border=20 width=99%><font size="3">
+t <tr style="background-color: #aaccff">
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th></tr>
+t <tr><td>1</td><td>weight point 3</td><td>
+c PMH16  <input type=text name=mh16 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>2</td><td>-X correction point 3</td><td>	
+c PMH17  <input type=text name=mh17 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>3</td><td>zero X point 3</td><td>	
+c PMH18  <input type=text name=mh18 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>4</td><td>+X correction point 3</td><td>	
+c PMH19  <input type=text name=mh19 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>-Y correction point 3</td><td>	
+c PMH20  <input type=text name=mh20 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>6</td><td>zero Y point 3</td><td>	
+c PMH21  <input type=text name=mh21 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>7</td><td>+Y correction point 3</td><td>
+c PMH22  <input type=text name=mh22 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm3">
+t </p></td></tr></table></form>
+t <form action="hoek_multi.cgi" method="post" name="ad">
+t <table border=20 width=99%><font size="3">
+t <tr style="background-color: #aaccff">
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th></tr>
+t <tr><td>7</td><td>weight point 4</td><td>
+c PMH23  <input type=text name=mh23 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>1</td><td>-X correction point 4</td><td>	
+c PMH24  <input type=text name=mh24 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>2</td><td>zero X point 4</td><td>	
+c PMH25  <input type=text name=mh25 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>3</td><td>+X correction point 4</td><td>	
+c PMH26  <input type=text name=mh26 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>4</td><td>-Y correction point 4</td><td>	
+c PMH27  <input type=text name=mh27 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>zero Y point 4</td><td>	
+c PMH28  <input type=text name=mh28 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>6</td><td>+Y correction point 4</td><td>
+c PMH29  <input type=text name=mh29 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm4">
+t </p></td></tr></table></form>
+t <form action="hoek_multi.cgi" method="post" name="ad">
+t <table border=20 width=99%><font size="3">
+t <tr style="background-color: #aaccff">
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th></tr>
+t <tr><td>1</td><td>weight point 5</td><td>
+c PMH30  <input type=text name=mh30 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>2</td><td>-X correction point 5</td><td>	
+c PMH31  <input type=text name=mh31 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>3</td><td>zero X point 5</td><td>	
+c PMH32  <input type=text name=mh32 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>4</td><td>+X correction point 5</td><td>	
+c PMH33  <input type=text name=mh33 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>-Y correction point 5</td><td>	
+c PMH34  <input type=text name=mh34 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>6</td><td>zero Y point 5</td><td>	
+c PMH35  <input type=text name=mh35 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>7</td><td>+Y correction point 5</td><td>
+c PMH36  <input type=text name=mh36 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm5">
+t </p></td></tr></table></form>
+t <form action="hoek_multi.cgi" method="post" name="ad">
+t  <table width=660>
+t  <tr><td align="center">
+t  <input type=submit value="angle zero" name="anglezero=">
+t  </td></tr></table>
+t <p align=center>
+t <input type=button value="Refresh" onclick="updateMultiple(formUpdate,plotADGraph)">
+t Periodic:<input type="checkbox" id="adChkBox" onclick="periodicUpdateAd()"  >
+t </p></form>
+i pg_footer.inc
+. End of script must be closed with period

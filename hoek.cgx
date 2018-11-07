@@ -1,0 +1,39 @@
+t <form>
+t <text>
+t <id>x_ch1</id>
+c PTS15 <value>%s</value>
+t </text>
+t <text>
+t <id>xval_ch1</id>
+c PTS16 <value>%s</value>
+t </text>
+t <text>
+t <id>cosx_ch1</id>
+c PTS17 <value>%s</value>
+t </text>
+t <text>
+t <id>y_ch1</id>
+c PTS18 <value>%s</value>
+t </text>
+t <text>
+t <id>yval_ch1</id>
+c PTS19 <value>%s</value>
+t </text>
+t <text>
+t <id>cosy_ch1</id>
+c PTS20 <value>%s</value>
+t </text>
+t <text>
+t <id>x_ch2</id>
+c PTS35 <value>%s </value>
+t </text>
+t <text>
+t <id>y_ch2</id>
+c PTS38 <value>%s</value>
+t </text>
+t <text>
+t <id>weight_ch1</id>
+c PNET1 <value>%s kg</value>
+t </text>
+t </form>
+.

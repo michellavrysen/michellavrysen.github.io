@@ -1,0 +1,48 @@
+t <html><head><title>Weight</title>
+t <script language=JavaScript type="text/javascript" src="xml_http.js"></script>
+t <script language=JavaScript type="text/javascript">
+# Define URL and refresh timeout
+t var formUpdate = new periodicObj("ad.cgx", 500);
+t function periodicUpdateAd() {
+t  if(document.getElementById("adChkBox").checked == true) {
+t   updateMultiple(formUpdate);
+t   ad_elTime = setTimeout(periodicUpdateAd, formUpdate.period);
+t  }
+t  else 
+t   clearTimeout(ad_elTime);
+t }
+t </script></head>
+i pg_header.inc
+t <h2 align="center"><br>WEIGHT </h2>
+t <form action="ad.cgi" method="post" name="ad">
+t <input type="hidden" value="ad" name="pg">
+t <table border=0 style="width:300px"><font size="3">
+t <tr>
+t <td align="right"><input type="text" width=20% readonly style="background-color: #aaccff; border: 16px"
+c PNET1 size="7" align="right" SPAN STYLE="font-size: 100%;" id="weight_ch1" value="%s kg"></td>
+t </tr>
+t </font></table>
+t <table width=200>
+t <tr>
+t <td><input type=submit value="Zero" name="Zero1="></td>
+t <td><input type=submit value="Tare" name="Tare1="></td>
+t <td><input type=submit value="Print" name="Print1="></td>
+t </tr></table>
+t <table border=0 style="width:300px"><font size="3">
+t <tr>
+t <td align="center"><input type="text" readonly style="background-color: #aaccff; border: 16px"
+c PNET2 size="7" SPAN STYLE="font-size: 100%;" id="weight_ch2" value="%s kg"></td>
+t </tr>
+t </font></table>
+t <table width=200>
+t <tr>
+t <td align="left"><input type=submit value="Zero" name="Zero2="></td>
+t <td align="left"><input type=submit value="Tare" name="Tare2="></td>
+t <td align="left"><input type=submit value="Print" name="Print2="></td>
+t </tr></table>
+t <p align=center>
+t <input type=button value="Refresh" onclick="updateMultiple(formUpdate)">
+t Periodic:<input type="checkbox" id="adChkBox"  onclick="periodicUpdateAd()"  >
+t </p></form>
+i pg_footer.inc
+. End of script must be closed with period

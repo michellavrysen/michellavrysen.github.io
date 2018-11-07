@@ -1,0 +1,191 @@
+t <html><head><title>Angle Setup</title>
+t </head>
+i pg_header.inc
+t <h2 align=center><br>Angle Setup ch1</h2>
+t <form action=angle.cgi method=post name=cgi>
+t <input type=hidden value="ts" name=pg>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>-X correction</td><td>	
+c PTS01  <input type=text name=ts01 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>2</td><td>zero X</td><td>	
+c PTS02  <input type=text name=ts02 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>3</td><td>+X correction</td><td>	
+c PTS03  <input type=text name=ts03 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>4</td><td>-Y correction</td><td>	
+c PTS04  <input type=text name=ts04 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>zero Y</td><td>	
+c PTS05  <input type=text name=ts05 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>6</td><td>+Y correction</td><td>
+c PTS06  <input type=text name=ts06 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>7</td><td>X minimum</td><td>
+c PTS07  <input type=text name=ts07 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>8</td><td>X maximum</td><td>
+c PTS08  <input type=text name=ts08 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>9</td><td>Y minimum</td><td>
+c PTS09  <input type=text name=ts09 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>10</td><td>Y maximum</td><td>
+c PTS10  <input type=text name=ts10 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>11</td><td>+X +Y</td><td>
+c PTS11  <input type=text name=ts11 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>12</td><td>+X -Y</td><td>
+c PTS12  <input type=text name=ts12 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>13</td><td>-X +Y</td><td>
+c PTS13  <input type=text name=ts13 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>14</td><td>-X -Y</td><td>
+c PTS14  <input type=text name=ts14 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>15</td><td>X input</td><td>
+c PTS15  <input type=text name=ts15 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>16</td><td>X value</td><td>
+c PTS16  <input type=text name=ts16 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>17</td><td>cos X</td><td>
+c PTS17  <input type=text name=ts17 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>18</td><td>Y input</td><td>
+c PTS18  <input type=text name=ts18 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>19</td><td>Y value</td><td>
+c PTS19  <input type=text name=ts19 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>20</td><td>cos Y</td><td>
+c PTS20  <input type=text name=ts20 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+t <h2 align=center><br>Angle Setup ch2</h2>
+t <form action=angle.cgi method=post name=cgi>
+t <input type=hidden value="ds" name=pg>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>-X correction</td><td>	
+c PTS21  <input type=text name=ts21 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>2</td><td>zero X</td><td>	
+c PTS22  <input type=text name=ts22 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>3</td><td>+X correction</td><td>	
+c PTS23  <input type=text name=ts23 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>4</td><td>-Y correction</td><td>	
+c PTS24  <input type=text name=ts24 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>zero Y</td><td>	
+c PTS25  <input type=text name=ts25 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>6</td><td>+Y correction</td><td>
+c PTS26  <input type=text name=ts26 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>7</td><td>X minimum</td><td>
+c PTS27  <input type=text name=ts27 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>8</td><td>X maximum</td><td>
+c PTS28  <input type=text name=ts28 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>9</td><td>Y minimum</td><td>
+c PTS29  <input type=text name=ts29 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>10</td><td>Y maximum</td><td>
+c PTS30  <input type=text name=ts30 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>11</td><td>+X +Y</td><td>
+c PTS31  <input type=text name=ts31 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>12</td><td>+X -Y</td><td>
+c PTS32  <input type=text name=ts32 value="%s" size=18 maxlength=8>
+t </td></tr>
+t <tr><td>13</td><td>-X +Y</td><td>
+c PTS33  <input type=text name=ts33 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>14</td><td>-X -Y</td><td>
+c PTS34  <input type=text name=ts34 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>15</td><td>X input</td><td>
+c PTS35  <input type=text name=ts35 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>16</td><td>X value</td><td>
+c PTS36  <input type=text name=ts36 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>17</td><td>cos X</td><td>
+c PTS37  <input type=text name=ts37 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>18</td><td>Y input</td><td>
+c PTS38  <input type=text name=ts38 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>19</td><td>Y value</td><td>
+c PTS39  <input type=text name=ts39 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>20</td><td>cos Y</td><td>
+c PTS40  <input type=text name=ts40 value="%s" size=18 maxlength=8>
+t </td></tr> 
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+t <form action=anglesetup.cgi method=post name=form1>
+t  <table width=660>
+t  <tr><td align="center">
+t  <input type=button value="Refresh" onclick="location='/anglesetup.cgi'">
+t  </td></tr></table>
+#t  </center>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.

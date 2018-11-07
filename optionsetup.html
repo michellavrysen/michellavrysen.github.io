@@ -1,0 +1,217 @@
+t <html><head><title>Option Setup</title>
+t </head>
+i pg_header.inc
+t <h2 align=center><br>Option Setup</h2>
+t <form action=optionsetup.cgi method=post name=cgi>
+t <input type=hidden value="dy" name=pg>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>Minimum samples up</td><td>	
+c PDY01  <input type=text name=dy01 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>2</td><td>Maximum samples up</td><td>	
+c PDY02  <input type=text name=dy02 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>3</td><td>Minimum samples down</td><td>	
+c PDY03  <input type=text name=dy03 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>4</td><td>Maximum samples down</td><td>	
+c PDY04  <input type=text name=dy04 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>Testmode</td><td>	
+t <select 
+c PEEWS  %s name="dy05">	
+c PDY0500O <option value=0 %s>OFF</option>
+c PDY0501O <option value=1 %s>ON</option>  
+t </select>
+t </td></tr>
+t <tr><td>6</td><td>Auto print</td><td>
+t <select 
+c PEEWS  %s name="dy06">	
+c PDY0600O <option value=0 %s>OFF</option>
+c PDY0601O <option value=1 %s>ON</option>  
+t </select> 
+t </td></tr>
+t <tr><td>7</td><td>Auto add total</td><td>
+t <select 
+c PEEWS  %s name="dy07">	
+c PDY0700O <option value=0 %s>OFF</option>
+c PDY0701O <option value=1 %s>ON</option>   
+t </select> 
+t </td></tr> 
+t <tr><td>8</td><td>Dynamic mode</td><td>
+t <select 
+c PEEWS  %s name="dy08">	
+c PDY0800O <option value=0 %s>--------</option>
+c PDY0801O <option value=1 %s>--------</option>  
+c PDY0802O <option value=2 %s>--------</option> 
+c PDY0803O <option value=3 %s>--------</option> 
+c PDY0804O <option value=4 %s>--------</option> 
+t </select>
+t </td></tr>
+t <tr><td>9</td><td>pos/neg correction</td><td>
+t <select 
+c PEEWS  %s name="dy09">	
+c PDY0900O <option value=0 %s>POSITIVE</option>
+c PDY0901O <option value=1 %s>NEGATIVE</option>  
+t </select>
+t </td></tr>
+t <tr><td>10</td><td>zeropoint samples</td><td>
+c PDY10  <input type=text name=dy10 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>11</td><td>point1 correction(%)</td><td>
+c PDY11  <input type=text name=dy11 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr> 
+t <tr><td>12</td><td>point2 correction(%)</td><td>
+c PDY12  <input type=text name=dy12 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>13</td><td>point3 correction(%)</td><td>
+c PDY13  <input type=text name=dy13 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr> 
+t <tr><td>14</td><td>point4 correction(%)</td><td>
+c PDY14  <input type=text name=dy14 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>15</td><td>point5 correction(%)</td><td>
+c PDY15  <input type=text name=dy15 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>16</td><td>point1 zeropoint(kg)</td><td>
+c PDY16  <input type=text name=dy16 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>17</td><td>point2 (kg)</td><td>
+c PDY17  <input type=text name=dy17 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr> 
+t <tr><td>18</td><td>point3 (kg)</td><td>
+c PDY18  <input type=text name=dy18 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>19</td><td>point4 (kg)</td><td>
+c PDY19  <input type=text name=dy19 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>20</td><td>point5 (kg)</td><td>
+c PDY20  <input type=text name=dy20 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>21</td><td>positive shock</td><td>	
+c PDY21  <input type=text name=dy21 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>	
+t <tr><td>22</td><td>negative shock</td><td>	
+c PDY22  <input type=text name=dy22 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>23</td><td>display mode</td><td>
+t <select 
+c PEEWS  %s name="dy23">	
+c PDY2300O <option value=0 %s>NORMAL</option>
+c PDY2301O <option value=1 %s>INVERS</option>  
+t </select>
+t </td></tr>
+t <tr><td>24</td><td>calibration gravity</td><td>	
+c PDY24  <input type=text name=dy24 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>25</td><td>client gravity</td><td>	
+c PDY25  <input type=text name=dy25 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>23</td><td>negative tare</td><td>
+t <select 
+c PEEWS  %s name="dy23">	
+c PDY2300O <option value=0 %s>OFF</option>
+c PDY2301O <option value=1 %s>ON</option>  
+t </select>
+t </td></tr>
+t <tr><td>27</td><td>---------</td><td>
+c PDY27  <input type=text name=dy27 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr> 
+t <tr><td>28</td><td>-----------</td><td>
+c PDY28  <input type=text name=dy28 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>29</td><td>--------------</td><td>
+c PDY29  <input type=text name=dy29 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>30</td><td>--------------</td><td>
+c PDY30  <input type=text name=dy30 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>31</td><td>---------------</td><td>
+c PDY31  <input type=text name=dy31 value="%s"
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr> 
+t <tr><td>32</td><td>------------------</td><td>
+c PDY32  <input type=text name=dy32 value="%s"
+c PEEWS  %s size=18 maxlength=8>  
+t </td></tr>
+t <tr><td>33</td><td>temperatuur compensation</td><td>
+t <select 
+c PEEWS  %s name="dy33">	
+c PDY3300O <option value=0 %s>OFF</option>
+c PDY3301O <option value=1 %s>POSITIVE</option>  
+c PDY3302O <option value=2 %s>NEGATIVE</option>  
+t </select>
+t </td></tr> 
+t <tr><td>34</td><td>speed compansation</td><td>
+t <select 
+c PEEWS  %s name="dy34">	
+c PDY3400O <option value=0 %s>OFF</option>
+c PDY3401O <option value=1 %s>ON</option>  
+t </select> 
+t </td></tr>
+t <tr><td>35</td><td>adc samples stripped</td><td>
+c PDY35  <input type=text name=dy35 value="%s" 
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>36</td><td> % used adc samples</td><td>
+c PDY36  <input type=text name=dy36 value="%s" 
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>37</td><td>SD-DRIVE  off-on</td><td>
+t <select 
+c PEEWS  %s name="dy37">	
+c PDY3700O <option value=0 %s>OFF</option>
+c PDY3701O <option value=1 %s>ON</option>  
+t </select>
+t </td></tr> 
+t <tr><td>38</td><td>AE23 Adress---->BC</td><td>
+c PDY38  <input type=text name=dy38 value="%s" 
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>39</td><td>Boardcomputer Adress</td><td>
+c PDY39  <input type=text name=dy39 value="%s" 
+c PEEWS  %s size=18 maxlength=8> 
+t </td></tr>
+t <tr><td>40</td><td>*********************</td><td>
+c PDY40  <input type=text name=dy40 value="%s" size=18 maxlength=8> 
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.
+
+

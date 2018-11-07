@@ -1,0 +1,101 @@
+t <html><head><title>AD Input</title>
+t <script language=JavaScript type="text/javascript" src="xml_http.js"></script>
+t <script language=JavaScript type="text/javascript">
+# Define URL and refresh timeout
+t var formUpdate = new periodicObj("hoek.cgx", 500);
+t function plotADGraph() {
+t  adVal = document.getElementById("ad_value1").value;
+t  numVal = adVal;
+t  tableSize = (numVal*100/6000);
+t  document.getElementById("ad_table").style.width = (tableSize + '%');
+t }
+t function periodicUpdateAd() {
+t  if(document.getElementById("adChkBox").checked == true) {
+t   updateMultiple(formUpdate,plotADGraph);
+t   ad_elTime = setTimeout(periodicUpdateAd, formUpdate.period);
+t  }
+t  else
+t   clearTimeout(ad_elTime);
+t }
+t </script></head>
+i pg_header.inc
+t <h2 align="center"><br>Angle Setup ch1</h2>
+t <form action="hoek.cgi" method="post" name="ad">
+t <input type="hidden" value="ad" name="pg">
+t <table border=20 width=99%><font size="3">
+t <tr style="background-color: #aaccff">
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th></tr>
+t <tr><td>1</td><td>X minimum</td><td>
+c PTS01  <input type=text name=ts01 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>2</td><td>X maximum</td><td>
+c PTS02  <input type=text name=ts02 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>3</td><td>Y minimum</td><td>
+c PTS03  <input type=text name=ts03 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>4</td><td>Y maximum</td><td>
+c PTS04  <input type=text name=ts04 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>5</td><td>+X +Y</td><td>
+c PTS05  <input type=text name=ts05 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>6</td><td>+X -Y</td><td>
+c PTS06  <input type=text name=ts06 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>7</td><td>-X +Y</td><td>
+c PTS07  <input type=text name=ts07 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>8</td><td>-X -Y</td><td>
+c PTS08  <input type=text name=ts08 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>9</td>
+t <td>X input</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS09 size="10" id="x_ch1" value="%s"></td></tr>
+t <tr><td>10</td>
+t <td>X value</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS10 size="10" id="xval_ch1" value="%s"></td></tr>
+t <tr><td>11</td>
+t <td>cos X</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS11 size="10" id="cosx_ch1" value="%s"></td></tr>
+t <tr><td>12</td>
+t <td>Y input</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS12 size="10" id="y_ch1" value="%s"></td>
+t </td></tr> 
+t <tr><td>13</td>
+t <td>Y value</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS13 size="10" id="yval_ch1" value="%s"></td></tr>
+t <tr><td>14</td>
+t <td>cos Y</td>
+t <td align="left"><input type="text" readonly style="background-color: transparent; border: 0px"
+c PTS14 size="10" id="cosy_ch1" value="%s"></td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t <p align=center>
+t <input type=button value="Refresh" onclick="updateMultiple(formUpdate,plotADGraph)">
+t Periodic:<input type="checkbox" id="adChkBox" onclick="periodicUpdateAd()"  >
+t  <table width=660>
+t  <tr><td align="center">
+t  <input type=submit value="angle zero" name="anglezero=">
+t  </td></tr></table>
+t </p></form>
+i pg_footer.inc
+. End of script must be closed with period

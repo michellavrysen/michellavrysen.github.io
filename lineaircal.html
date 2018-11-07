@@ -1,0 +1,170 @@
+t <html><head><title>Lineair Calibration</title>
+t </head>
+i pg_header.inc
+t <h2 align=center><br>Lineair Calibration ch1</h2>
+t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>Point nr</th>
+t  <th width=40%>ADC</th>
+t  <th width=40%>Weight</th>
+t </tr>
+t <tr><td>Pt1</td><td>
+c PCA01  <input type=text name=ca01 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA02  <input type=text name=ca02 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>Pt2</td><td>
+c PCA03  <input type=text name=ca03 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA04  <input type=text name=ca04 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt3</td><td>
+c PCA05  <input type=text name=ca05 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA06  <input type=text name=ca06 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt4</td><td>
+c PCA07  <input type=text name=ca07 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA08  <input type=text name=ca08 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt5</td><td>
+c PCA09  <input type=text name=ca09 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA10  <input type=text name=ca10 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt6</td><td>
+c PCA11  <input type=text name=ca11 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA12  <input type=text name=ca12 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt7</td><td>
+c PCA13  <input type=text name=ca13 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA14  <input type=text name=ca14 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>Pt8</td><td>
+c PCA15  <input type=text name=ca15 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA16  <input type=text name=ca16 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt9</td><td>
+c PCA17  <input type=text name=ca17 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA18  <input type=text name=ca18 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt10</td><td>
+c PCA19  <input type=text name=ca19 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA20  <input type=text name=ca20 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t </font></table>
+t <h2 align=center><br>Lineair Calibration ch2</h2>
+t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>Point nr</th>
+t  <th width=40%>ADC</th>
+t  <th width=40%>Weight</th>
+t </tr>
+t <tr><td>Pt1</td><td>
+c PCA21  <input type=text name=ca21 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA22  <input type=text name=ca22 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>Pt2</td><td>
+c PCA23  <input type=text name=ca23 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA24  <input type=text name=ca24 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt3</td><td>
+c PCA25  <input type=text name=ca25 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA26  <input type=text name=ca26 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt4</td><td>
+c PCA27  <input type=text name=ca27 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA28  <input type=text name=ca28 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt5</td><td>
+c PCA29  <input type=text name=ca29 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>	
+c PCA30  <input type=text name=ca30 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt6</td><td>
+c PCA31  <input type=text name=ca31 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA32  <input type=text name=ca32 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt7</td><td>
+c PCA33  <input type=text name=ca33 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA34  <input type=text name=ca34 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr> 
+t <tr><td>Pt8</td><td>
+c PCA35  <input type=text name=ca35 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA36  <input type=text name=ca36 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt9</td><td>
+c PCA37  <input type=text name=ca37 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA38  <input type=text name=ca38 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt10</td><td>
+c PCA39  <input type=text name=ca39 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td><td>
+c PCA40  <input type=text name=ca40 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t </font></table>
+t <form action=lineaircal.cgi method=post name=form1>
+t  <table width=660>
+t  <tr><td align="center">
+t  <input type=button value="Refresh" onclick="location='/lineaircal.cgi'">
+t  </td></tr></table>
+t  </center>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.

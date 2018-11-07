@@ -1,0 +1,423 @@
+t <html><head><title>Input Output Setup</title>
+t </head>
+i pg_header.inc
+t <h2 align=center><br>Input</h2>
+t <form action=inoutsetup.cgi method=post name=cgi>
+t <input type=hidden value="io" name=pg>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>input 1</td><td>
+t <select name="io01">	
+c PINP100O <option value=0 %s>OFF</option>
+c PINP101O <option value=1 %s>ZERO</option>
+c PINP102O <option value=2 %s>TARE</option>
+c PINP103O <option value=3 %s>PRINT</option>
+c PINP104O <option value=4 %s>PR+ZERO</option>
+c PINP105O <option value=5 %s>PR+TARE</option> 
+c PINP106O <option value=6 %s>PRESSURE</option> 
+c PINP107O <option value=7 %s>1stWeigh</option>
+c PINP108O <option value=8 %s>2ndWeigh</option>
+c PINP109O <option value=9 %s>1st&2ndW</option>
+c PINP110O <option value=10 %s>SORT1</option>
+c PINP111O <option value=11 %s>SORT2</option>
+c PINP112O <option value=12 %s>SORT4</option>
+c PINP113O <option value=13 %s>SORT8</option>
+c PINP114O <option value=14 %s>KIP</option>
+c PINP115O <option value=15 %s>TILT</option>
+c PINP116O <option value=16 %s>DISPL.ON</option>
+c PINP117O <option value=17 %s>DISP.OFF</option>
+c PINP118O <option value=18 %s>D.PLS.ON</option> 
+c PINP119O <option value=19 %s>sensor1 CH1</option>
+c PINP120O <option value=20 %s>sensor2 CH1</option>	
+c PINP121O <option value=21 %s>sensor1 CH2</option>
+c PINP122O <option value=22 %s>sensor2 CH2</option>
+c PINP123O <option value=23 %s>-----</option>
+c PINP124O <option value=24 %s>-----</option>	
+c PINP125O <option value=25 %s>-----</option>
+c PINP126O <option value=26 %s>-----</option>	
+c PINP127O <option value=27 %s>CH1 +CH2</option>
+c PINP128O <option value=28 %s>CAM CH1</option>
+c PINP129O <option value=29 %s>CAM CH2</option>
+c PINP130O <option value=30 %s>CAMCH1+2</option>
+c PINP131O <option value=31 %s>SENS1CH1</option>
+c PINP132O <option value=32 %s>SENS2CH1</option>
+c PINP133O <option value=33 %s>SENS1CH2</option>
+c PINP134O <option value=34 %s>SENS2CH2</option>	 
+t </select>
+t </td></tr>	
+t <tr><td>2</td><td>input 2</td><td>	
+t <select name="io02">	
+c PINP200O <option value=0 %s>OFF</option>
+c PINP201O <option value=1 %s>ZERO</option>
+c PINP202O <option value=2 %s>TARE</option>
+c PINP203O <option value=3 %s>PRINT</option>
+c PINP204O <option value=4 %s>PR+ZERO</option>
+c PINP205O <option value=5 %s>PR+TARE</option> 
+c PINP206O <option value=6 %s>PRESSURE</option> 
+c PINP207O <option value=7 %s>1stWeigh</option>
+c PINP208O <option value=8 %s>2ndWeigh</option>
+c PINP209O <option value=9 %s>1st&2ndW</option>
+c PINP210O <option value=10 %s>SORT1</option>
+c PINP211O <option value=11 %s>SORT2</option>
+c PINP212O <option value=12 %s>SORT4</option>
+c PINP213O <option value=13 %s>SORT8</option>
+c PINP214O <option value=14 %s>KIP</option>
+c PINP215O <option value=15 %s>TILT</option>
+c PINP216O <option value=16 %s>DISPL.ON</option>
+c PINP217O <option value=17 %s>DISP.OFF</option>
+c PINP218O <option value=18 %s>D.PLS.ON</option> 
+c PINP219O <option value=19 %s>sensor1 CH1</option>
+c PINP220O <option value=20 %s>sensor2 CH1</option>	
+c PINP221O <option value=21 %s>sensor1 CH2</option>
+c PINP222O <option value=22 %s>sensor2 CH2</option>
+c PINP223O <option value=23 %s>-----</option>
+c PINP224O <option value=24 %s>-----</option>	
+c PINP225O <option value=25 %s>-----</option>
+c PINP226O <option value=26 %s>-----</option>
+c PINP227O <option value=27 %s>CH1 +CH2</option>
+c PINP228O <option value=28 %s>CAM CH1</option>
+c PINP229O <option value=29 %s>CAM CH2</option>
+c PINP230O <option value=30 %s>CAMCH1+2</option>
+c PINP231O <option value=31 %s>SENS1CH1</option>
+c PINP232O <option value=32 %s>SENS2CH1</option>
+c PINP233O <option value=33 %s>SENS1CH2</option>
+c PINP234O <option value=34 %s>SENS2CH2</option> 
+t </select>
+t </td></tr>
+t <tr><td>3</td><td>input 3</td><td>	
+t <select name="io03">	
+c PINP300O <option value=0 %s>OFF</option>
+c PINP301O <option value=1 %s>ZERO</option>
+c PINP302O <option value=2 %s>TARE</option>
+c PINP303O <option value=3 %s>PRINT</option>
+c PINP304O <option value=4 %s>PR+ZERO</option>
+c PINP305O <option value=5 %s>PR+TARE</option> 
+c PINP306O <option value=6 %s>PRESSURE</option> 
+c PINP307O <option value=7 %s>1stWeigh</option>
+c PINP308O <option value=8 %s>2ndWeigh</option>
+c PINP309O <option value=9 %s>1st&2ndW</option>
+c PINP310O <option value=10 %s>SORT1</option>
+c PINP311O <option value=11 %s>SORT2</option>
+c PINP312O <option value=12 %s>SORT4</option>
+c PINP313O <option value=13 %s>SORT8</option>
+c PINP314O <option value=14 %s>KIP</option>
+c PINP315O <option value=15 %s>TILT</option>
+c PINP316O <option value=16 %s>DISPL.ON</option>
+c PINP317O <option value=17 %s>DISP.OFF</option>
+c PINP318O <option value=18 %s>D.PLS.ON</option> 
+c PINP319O <option value=19 %s>sensor1 CH1</option>
+c PINP320O <option value=20 %s>sensor2 CH1</option>	
+c PINP321O <option value=21 %s>sensor1 CH2</option>
+c PINP322O <option value=22 %s>sensor2 CH2</option>
+c PINP323O <option value=23 %s>-----</option>
+c PINP324O <option value=24 %s>-----</option>	
+c PINP325O <option value=25 %s>-----</option>
+c PINP326O <option value=26 %s>-----</option>	
+c PINP327O <option value=27 %s>CH1 +CH2</option>
+c PINP328O <option value=28 %s>CAM CH1</option>
+c PINP329O <option value=29 %s>CAM CH2</option>
+c PINP330O <option value=30 %s>CAMCH1+2</option>
+c PINP331O <option value=31 %s>SENS1CH1</option>
+c PINP332O <option value=32 %s>SENS2CH1</option>
+c PINP333O <option value=33 %s>SENS1CH2</option>
+c PINP334O <option value=34 %s>SENS2CH2</option>
+t </select>
+t </td></tr>
+t <tr><td>4</td><td>input 4</td><td>	
+t <select name="io04">	
+c PINP400O <option value=0 %s>OFF</option>
+c PINP401O <option value=1 %s>ZERO</option>
+c PINP402O <option value=2 %s>TARE</option>
+c PINP403O <option value=3 %s>PRINT</option>
+c PINP404O <option value=4 %s>PR+ZERO</option>
+c PINP405O <option value=5 %s>PR+TARE</option> 
+c PINP406O <option value=6 %s>PRESSURE</option> 
+c PINP407O <option value=7 %s>1stWeigh</option>
+c PINP408O <option value=8 %s>2ndWeigh</option>
+c PINP409O <option value=9 %s>1st&2ndW</option>
+c PINP410O <option value=10 %s>SORT1</option>
+c PINP411O <option value=11 %s>SORT2</option>
+c PINP412O <option value=12 %s>SORT4</option>
+c PINP413O <option value=13 %s>SORT8</option>
+c PINP414O <option value=14 %s>KIP</option>
+c PINP415O <option value=15 %s>TILT</option>
+c PINP416O <option value=16 %s>DISPL.ON</option>
+c PINP417O <option value=17 %s>DISP.OFF</option>
+c PINP418O <option value=18 %s>D.PLS.ON</option> 
+c PINP419O <option value=19 %s>sensor1 CH1</option>
+c PINP420O <option value=20 %s>sensor2 CH1</option>	
+c PINP421O <option value=21 %s>sensor1 CH2</option>
+c PINP422O <option value=22 %s>sensor2 CH2</option>
+c PINP423O <option value=23 %s>-----</option>
+c PINP424O <option value=24 %s>-----</option>	
+c PINP425O <option value=25 %s>-----</option>
+c PINP426O <option value=26 %s>-----</option>
+c PINP427O <option value=27 %s>CH1 +CH2</option>
+c PINP428O <option value=28 %s>CAM CH1</option>
+c PINP429O <option value=29 %s>CAM CH2</option>
+c PINP430O <option value=30 %s>CAMCH1+2</option>
+c PINP431O <option value=31 %s>SENS1CH1</option>
+c PINP432O <option value=32 %s>SENS2CH1</option>
+c PINP433O <option value=33 %s>SENS1CH2</option>
+c PINP434O <option value=34 %s>SENS2CH2</option> 
+t </select>
+t </td></tr>
+t <tr><td>5</td><td>input 5</td><td>	
+t <select name="io05">	
+c PINP500O <option value=0 %s>OFF</option>
+c PINP501O <option value=1 %s>ZERO</option>
+c PINP502O <option value=2 %s>TARE</option>
+c PINP503O <option value=3 %s>PRINT</option>
+c PINP504O <option value=4 %s>PR+ZERO</option>
+c PINP505O <option value=5 %s>PR+TARE</option> 
+c PINP506O <option value=6 %s>PRESSURE</option> 
+c PINP507O <option value=7 %s>1stWeigh</option>
+c PINP508O <option value=8 %s>2ndWeigh</option>
+c PINP509O <option value=9 %s>1st&2ndW</option>
+c PINP510O <option value=10 %s>SORT1</option>
+c PINP511O <option value=11 %s>SORT2</option>
+c PINP512O <option value=12 %s>SORT4</option>
+c PINP513O <option value=13 %s>SORT8</option>
+c PINP514O <option value=14 %s>KIP</option>
+c PINP515O <option value=15 %s>TILT</option>
+c PINP516O <option value=16 %s>DISPL.ON</option>
+c PINP517O <option value=17 %s>DISP.OFF</option>
+c PINP518O <option value=18 %s>D.PLS.ON</option> 
+c PINP519O <option value=19 %s>sensor1 CH1</option>
+c PINP520O <option value=20 %s>sensor2 CH1</option>	
+c PINP521O <option value=21 %s>sensor1 CH2</option>
+c PINP522O <option value=22 %s>sensor2 CH2</option>
+c PINP523O <option value=23 %s>-----</option>
+c PINP524O <option value=24 %s>-----</option>	
+c PINP525O <option value=25 %s>-----</option>
+c PINP526O <option value=26 %s>-----</option>
+c PINP527O <option value=27 %s>CH1 +CH2</option>
+c PINP528O <option value=28 %s>CAM CH1</option>
+c PINP529O <option value=29 %s>CAM CH2</option>
+c PINP530O <option value=30 %s>CAMCH1+2</option>
+c PINP531O <option value=31 %s>SENS1CH1</option>
+c PINP532O <option value=32 %s>SENS2CH1</option>
+c PINP533O <option value=33 %s>SENS1CH2</option>
+c PINP534O <option value=34 %s>SENS2CH2</option>
+t </select>
+t </td></tr>
+t <tr><td>6</td><td>input 6</td><td>
+t <select name="io06">	
+c PINP600O <option value=0 %s>OFF</option>
+c PINP601O <option value=1 %s>ZERO</option>
+c PINP602O <option value=2 %s>TARE</option>
+c PINP603O <option value=3 %s>PRINT</option>
+c PINP604O <option value=4 %s>PR+ZERO</option>
+c PINP605O <option value=5 %s>PR+TARE</option> 
+c PINP606O <option value=6 %s>PRESSURE</option> 
+c PINP607O <option value=7 %s>1stWeigh</option>
+c PINP608O <option value=8 %s>2ndWeigh</option>
+c PINP609O <option value=9 %s>1st&2ndW</option>
+c PINP610O <option value=10 %s>SORT1</option>
+c PINP611O <option value=11 %s>SORT2</option>
+c PINP612O <option value=12 %s>SORT4</option>
+c PINP613O <option value=13 %s>SORT8</option>
+c PINP614O <option value=14 %s>KIP</option>
+c PINP615O <option value=15 %s>TILT</option>
+c PINP616O <option value=16 %s>DISPL.ON</option>
+c PINP617O <option value=17 %s>DISP.OFF</option>
+c PINP618O <option value=18 %s>D.PLS.ON</option> 
+c PINP619O <option value=19 %s>sensor1 CH1</option>
+c PINP620O <option value=20 %s>sensor2 CH1</option>	
+c PINP621O <option value=21 %s>sensor1 CH2</option>
+c PINP622O <option value=22 %s>sensor2 CH2</option>
+c PINP623O <option value=23 %s>-----</option>
+c PINP624O <option value=24 %s>-----</option>	
+c PINP625O <option value=25 %s>-----</option>
+c PINP626O <option value=26 %s>-----</option>
+c PINP627O <option value=27 %s>CH1 +CH2</option>
+c PINP628O <option value=28 %s>CAM CH1</option>
+c PINP629O <option value=29 %s>CAM CH2</option>
+c PINP630O <option value=30 %s>CAMCH1+2</option>
+c PINP631O <option value=31 %s>SENS1CH1</option>
+c PINP632O <option value=32 %s>SENS2CH1</option>
+c PINP633O <option value=33 %s>SENS1CH2</option>
+c PINP634O <option value=34 %s>SENS2CH2</option> 
+t </select>
+t </td></tr>
+t <tr><td>7</td><td>input 7</td><td>
+t <select name="io07">	
+c PINP700O <option value=0 %s>OFF</option>
+c PINP701O <option value=1 %s>ZERO</option>
+c PINP702O <option value=2 %s>TARE</option>
+c PINP703O <option value=3 %s>PRINT</option>
+c PINP704O <option value=4 %s>PR+ZERO</option>
+c PINP705O <option value=5 %s>PR+TARE</option> 
+c PINP706O <option value=6 %s>PRESSURE</option> 
+c PINP707O <option value=7 %s>1stWeigh</option>
+c PINP708O <option value=8 %s>2ndWeigh</option>
+c PINP709O <option value=9 %s>1st&2ndW</option>
+c PINP710O <option value=10 %s>SORT1</option>
+c PINP711O <option value=11 %s>SORT2</option>
+c PINP712O <option value=12 %s>SORT4</option>
+c PINP713O <option value=13 %s>SORT8</option>
+c PINP714O <option value=14 %s>KIP</option>
+c PINP715O <option value=15 %s>TILT</option>
+c PINP716O <option value=16 %s>DISPL.ON</option>
+c PINP717O <option value=17 %s>DISP.OFF</option>
+c PINP718O <option value=18 %s>D.PLS.ON</option> 
+c PINP719O <option value=19 %s>sensor1 CH1</option>
+c PINP720O <option value=20 %s>sensor2 CH1</option>	
+c PINP721O <option value=21 %s>sensor1 CH2</option>
+c PINP722O <option value=22 %s>sensor2 CH2</option>
+c PINP723O <option value=23 %s>-----</option>
+c PINP724O <option value=24 %s>-----</option>	
+c PINP725O <option value=25 %s>-----</option>
+c PINP726O <option value=26 %s>-----</option>	
+c PINP727O <option value=27 %s>CH1 +CH2</option>
+c PINP728O <option value=28 %s>CAM CH1</option>
+c PINP729O <option value=29 %s>CAM CH2</option>
+c PINP730O <option value=30 %s>CAMCH1+2</option>
+c PINP731O <option value=31 %s>SENS1CH1</option>
+c PINP732O <option value=32 %s>SENS2CH1</option>
+c PINP733O <option value=33 %s>SENS1CH2</option>
+c PINP734O <option value=34 %s>SENS2CH2</option>
+t </select>
+t </td></tr> 
+t <tr><td>8</td><td>input 8</td><td>
+t <select name="io08">	
+c PINP800O <option value=0 %s>OFF</option>
+c PINP801O <option value=1 %s>ZERO</option>
+c PINP802O <option value=2 %s>TARE</option>
+c PINP803O <option value=3 %s>PRINT</option>
+c PINP804O <option value=4 %s>PR+ZERO</option>
+c PINP805O <option value=5 %s>PR+TARE</option> 
+c PINP806O <option value=6 %s>PRESSURE</option> 
+c PINP807O <option value=7 %s>1stWeigh</option>
+c PINP808O <option value=8 %s>2ndWeigh</option>
+c PINP809O <option value=9 %s>1st&2ndW</option>
+c PINP810O <option value=10 %s>SORT1</option>
+c PINP811O <option value=11 %s>SORT2</option>
+c PINP812O <option value=12 %s>SORT4</option>
+c PINP813O <option value=13 %s>SORT8</option>
+c PINP814O <option value=14 %s>KIP</option>
+c PINP815O <option value=15 %s>TILT</option>
+c PINP816O <option value=16 %s>DISPL.ON</option>
+c PINP817O <option value=17 %s>DISP.OFF</option>
+c PINP818O <option value=18 %s>D.PLS.ON</option> 
+c PINP819O <option value=19 %s>sensor1 CH1</option>
+c PINP820O <option value=20 %s>sensor2 CH1</option>	
+c PINP821O <option value=21 %s>sensor1 CH2</option>
+c PINP822O <option value=22 %s>sensor2 CH2</option>
+c PINP823O <option value=23 %s>-----</option>
+c PINP824O <option value=24 %s>-----</option>	
+c PINP825O <option value=25 %s>-----</option>
+c PINP826O <option value=26 %s>-----</option>	
+c PINP827O <option value=27 %s>CH1 +CH2</option>
+c PINP828O <option value=28 %s>CAM CH1</option>
+c PINP829O <option value=29 %s>CAM CH2</option>
+c PINP830O <option value=30 %s>CAMCH1+2</option>
+c PINP831O <option value=31 %s>SENS1CH1</option>
+c PINP832O <option value=32 %s>SENS2CH1</option>
+c PINP833O <option value=33 %s>SENS1CH2</option>
+c PINP834O <option value=34 %s>SENS2CH2</option>
+t </select>
+t </td></tr>
+t </font></table>
+t <h2 align=center><br>Output</h2>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>nr</th>
+t  <th width=40%>Setup</th>
+t  <th width=40%>Value</th>
+t </tr>
+t <tr><td>1</td><td>output 1</td><td>	
+t <select name="io09">	
+c POUT100O <option value=0 %s>OFF</option>
+c POUT101O <option value=1 %s>ON</option> 
+c POUT102O <option value=2 %s>ZERO</option>
+c POUT103O <option value=3 %s>TARE</option>
+c POUT104O <option value=4 %s>1stWeigh</option>
+c POUT105O <option value=5 %s>2ndWeigh</option>
+c POUT106O <option value=6 %s>SETP.1</option>
+c POUT107O <option value=7 %s>SETP.2</option>
+c POUT108O <option value=8 %s>SETP.3</option>
+c POUT109O <option value=9 %s>SETP.4</option>
+c POUT110O <option value=10 %s>PR.ACK.</option>
+c POUT111O <option value=11 %s>WEIGHING</option>
+c POUT112O <option value=12 %s>ERROR</option>
+c POUT113O <option value=13 %s>WEIGH.P.</option>
+c POUT114O <option value=14 %s>TAGOKCH1</option>
+c POUT115O <option value=15 %s>TAGOKCH2</option>
+t </select>
+t </td></tr>	
+t <tr><td>2</td><td>output 2</td><td>	
+t <select name="io10">	
+c POUT200O <option value=0 %s>OFF</option>
+c POUT201O <option value=1 %s>ON</option> 
+c POUT202O <option value=2 %s>ZERO</option>
+c POUT203O <option value=3 %s>TARE</option>
+c POUT204O <option value=4 %s>1stWeigh</option>
+c POUT205O <option value=5 %s>2ndWeigh</option>
+c POUT206O <option value=6 %s>SETP.1</option>
+c POUT207O <option value=7 %s>SETP.2</option>
+c POUT208O <option value=8 %s>SETP.3</option>
+c POUT209O <option value=9 %s>SETP.4</option>
+c POUT210O <option value=10 %s>PR.ACK.</option>
+c POUT211O <option value=11 %s>WEIGHING</option>
+c POUT212O <option value=12 %s>ERROR</option>
+c POUT213O <option value=13 %s>WEIGH.P.</option>
+c POUT214O <option value=14 %s>TAGOKCH1</option>
+c POUT215O <option value=15 %s>TAGOKCH2</option> 
+t </select>
+t </td></tr>
+t <tr><td>3</td><td>output 3</td><td>	
+t <select name="io11">	
+c POUT300O <option value=0 %s>OFF</option>
+c POUT301O <option value=1 %s>ON</option> 
+c POUT302O <option value=2 %s>ZERO</option>
+c POUT303O <option value=3 %s>TARE</option>
+c POUT304O <option value=4 %s>1stWeigh</option>
+c POUT305O <option value=5 %s>2ndWeigh</option>
+c POUT306O <option value=6 %s>SETP.1</option>
+c POUT307O <option value=7 %s>SETP.2</option>
+c POUT308O <option value=8 %s>SETP.3</option>
+c POUT309O <option value=9 %s>SETP.4</option>
+c POUT310O <option value=10 %s>PR.ACK.</option>
+c POUT311O <option value=11 %s>WEIGHING</option>
+c POUT312O <option value=12 %s>ERROR</option>
+c POUT313O <option value=13 %s>WEIGH.P.</option>
+c POUT314O <option value=14 %s>TAGOKCH1</option>
+c POUT315O <option value=15 %s>TAGOKCH2</option> 
+t </select>
+t </td></tr>
+t <tr><td>4</td><td>output 4</td><td>	
+t <select name="io12">	
+c POUT400O <option value=0 %s>OFF</option>
+c POUT401O <option value=1 %s>ON</option> 
+c POUT402O <option value=2 %s>ZERO</option>
+c POUT403O <option value=3 %s>TARE</option>
+c POUT404O <option value=4 %s>1stWeigh</option>
+c POUT405O <option value=5 %s>2ndWeigh</option>
+c POUT406O <option value=6 %s>SETP.1</option>
+c POUT407O <option value=7 %s>SETP.2</option>
+c POUT408O <option value=8 %s>SETP.3</option>
+c POUT409O <option value=9 %s>SETP.4</option>
+c POUT410O <option value=10 %s>PR.ACK.</option>
+c POUT411O <option value=11 %s>WEIGHING</option>
+c POUT412O <option value=12 %s>ERROR</option>
+c POUT413O <option value=13 %s>WEIGH.P.</option>
+c POUT414O <option value=14 %s>TAGOKCH1</option>
+c POUT415O <option value=15 %s>TAGOKCH2</option>
+t </select>
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.

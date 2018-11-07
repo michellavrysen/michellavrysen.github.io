@@ -1,0 +1,461 @@
+t <html><head><title>Multi Scale Setup</title>
+t </head>
+i pg_header.inc
+t <h2 align=center><br>Multi Scale Setup ch1</h2>
+t <form action=multiscale.cgi method=post name=cgi>
+t <input type=hidden value="ms" name=pg>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>Point nr</th>
+t  <th width=40%>Scale</th>
+t  <th width=40%>Weight Point</th>
+t </tr>
+t <tr><td>Pt1</td><td>
+#c PMS01  <input type=text name=ms01 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms01">	 
+c PMS0100O <option value=0 %s>
+c PSD01 %s</option>
+c PMS0101O <option value=1 %s>
+c PSD02 %s</option> 
+c PMS0102O <option value=2 %s>
+c PSD03 %s</option>
+c PMS0103O <option value=3 %s>
+c PSD04 %s</option>
+c PMS0104O <option value=4 %s>
+c PSD05 %s</option>
+c PMS0105O <option value=5 %s>
+c PSD06 %s</option>
+c PMS0106O <option value=6 %s>
+c PSD07 %s</option>
+c PMS0107O <option value=7 %s>
+c PSD08 %s</option>
+t </select>
+t </td><td>	
+c PMS02  <input type=text name=ms02 value="%s"
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>Pt2</td><td>
+#c PMS03  <input type=text name=ms03 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms03">	 
+c PMS0300O <option value=0 %s>
+c PSD01 %s</option>
+c PMS0301O <option value=1 %s>
+c PSD02 %s</option> 
+c PMS0302O <option value=2 %s>
+c PSD03 %s</option>
+c PMS0303O <option value=3 %s>
+c PSD04 %s</option>
+c PMS0304O <option value=4 %s>
+c PSD05 %s</option>
+c PMS0305O <option value=5 %s>
+c PSD06 %s</option>
+c PMS0306O <option value=6 %s>
+c PSD07 %s</option>
+c PMS0307O <option value=7 %s>
+c PSD08 %s</option>
+t </select>
+t </td><td>	
+c PMS04  <input type=text name=ms04 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt3</td><td>
+#c PMS05  <input type=text name=ms05 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms05">	 
+c PMS0500O <option value=0 %s>
+c PSD01 %s</option>
+c PMS0501O <option value=1 %s>
+c PSD02 %s</option> 
+c PMS0502O <option value=2 %s>
+c PSD03 %s</option>
+c PMS0503O <option value=3 %s>
+c PSD04 %s</option>
+c PMS0504O <option value=4 %s>
+c PSD05 %s</option>
+c PMS0505O <option value=5 %s>
+c PSD06 %s</option>
+c PMS0506O <option value=6 %s>
+c PSD07 %s</option>
+c PMS0507O <option value=7 %s>
+c PSD08 %s</option>
+t </select>
+t </td><td>	
+c PMS06  <input type=text name=ms06 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt4</td><td>
+#c PMS07  <input type=text name=ms07 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms07">	 
+c PMS0700O <option value=0 %s>
+c PSD01 %s</option>
+c PMS0701O <option value=1 %s>
+c PSD02 %s</option> 
+c PMS0702O <option value=2 %s>
+c PSD03 %s</option>
+c PMS0703O <option value=3 %s>
+c PSD04 %s</option>
+c PMS0704O <option value=4 %s>
+c PSD05 %s</option>
+c PMS0705O <option value=5 %s>
+c PSD06 %s</option>
+c PMS0706O <option value=6 %s>
+c PSD07 %s</option>
+c PMS0707O <option value=7 %s>
+c PSD08 %s</option>
+t </select>
+t </td><td>	
+c PMS08  <input type=text name=ms08 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt5</td><td>
+#c PMS09  <input type=text name=ms09 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms09">	 
+c PMS0900O <option value=0 %s>
+c PSD01 %s</option>
+c PMS0901O <option value=1 %s>
+c PSD02 %s</option> 
+c PMS0902O <option value=2 %s>
+c PSD03 %s</option>
+c PMS0903O <option value=3 %s>
+c PSD04 %s</option>
+c PMS0904O <option value=4 %s>
+c PSD05 %s</option>
+c PMS0905O <option value=5 %s>
+c PSD06 %s</option>
+c PMS0906O <option value=6 %s>
+c PSD07 %s</option>
+c PMS0907O <option value=7 %s>
+c PSD08 %s</option>
+t </select>
+t </td><td>	
+c PMS10  <input type=text name=ms10 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td></td><td>nb scale points</td><td>	
+t <select 
+c PEEWS  %s name="ms11">	 
+c PMS1100O <option value=0 %s>1</option>
+c PMS1101O <option value=1 %s>2</option> 
+c PMS1102O <option value=2 %s>3</option>
+c PMS1103O <option value=3 %s>4</option>
+c PMS1104O <option value=4 %s>5</option>
+t </select>
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+t <h2 align=center><br>Multi Scale Setup ch2</h2>
+t <form action=multiscale.cgi method=post name=cgi>
+t <input type=hidden value="ms" name=pg>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>Point nr</th>
+t  <th width=40%>Scale</th>
+t  <th width=40%>Weight Point</th>
+t </tr>
+t <tr><td>Pt1</td><td>
+#c PMS12  <input type=text name=ms12 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms12">	 
+c PMS1200O <option value=0 %s>
+c PSD09 %s</option>
+c PMS1201O <option value=1 %s>
+c PSD10 %s</option> 
+c PMS1202O <option value=2 %s>
+c PSD11 %s</option>
+c PMS1203O <option value=3 %s>
+c PSD12 %s</option>
+c PMS1204O <option value=4 %s>
+c PSD13 %s</option>
+c PMS1205O <option value=5 %s>
+c PSD14 %s</option>
+c PMS1206O <option value=6 %s>
+c PSD15 %s</option>
+c PMS1207O <option value=7 %s>
+c PSD16 %s</option>
+t </select>
+t </td><td>	
+c PMS13  <input type=text name=ms13 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>Pt2</td><td>
+#c PMS14  <input type=text name=ms14 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms14">	 
+c PMS1400O <option value=0 %s>
+c PSD09 %s</option>
+c PMS1401O <option value=1 %s>
+c PSD10 %s</option> 
+c PMS1402O <option value=2 %s>
+c PSD11 %s</option>
+c PMS1403O <option value=3 %s>
+c PSD12 %s</option>
+c PMS1404O <option value=4 %s>
+c PSD13 %s</option>
+c PMS1405O <option value=5 %s>
+c PSD14 %s</option>
+c PMS1406O <option value=6 %s>
+c PSD15 %s</option>
+c PMS1407O <option value=7 %s>
+c PSD16 %s</option>
+t </select>
+t </td><td>	
+c PMS15  <input type=text name=ms15 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt3</td><td>
+#c PMS16  <input type=text name=ms16 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms16">	 
+c PMS1600O <option value=0 %s>
+c PSD09 %s</option>
+c PMS1601O <option value=1 %s>
+c PSD10 %s</option> 
+c PMS1602O <option value=2 %s>
+c PSD11 %s</option>
+c PMS1603O <option value=3 %s>
+c PSD12 %s</option>
+c PMS1604O <option value=4 %s>
+c PSD13 %s</option>
+c PMS1605O <option value=5 %s>
+c PSD14 %s</option>
+c PMS1606O <option value=6 %s>
+c PSD15 %s</option>
+c PMS1607O <option value=7 %s>
+c PSD16 %s</option>
+t </select>
+t </td><td>	
+c PMS17  <input type=text name=ms17 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt4</td><td>
+#c PMS18  <input type=text name=ms18 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms18">	 
+c PMS1800O <option value=0 %s>
+c PSD09 %s</option>
+c PMS1801O <option value=1 %s>
+c PSD10 %s</option> 
+c PMS1802O <option value=2 %s>
+c PSD11 %s</option>
+c PMS1803O <option value=3 %s>
+c PSD12 %s</option>
+c PMS1804O <option value=4 %s>
+c PSD13 %s</option>
+c PMS1805O <option value=5 %s>
+c PSD14 %s</option>
+c PMS1806O <option value=6 %s>
+c PSD15 %s</option>
+c PMS1807O <option value=7 %s>
+c PSD16 %s</option>
+t </select>
+t </td><td>	
+c PMS19  <input type=text name=ms19 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt5</td><td>
+#c PMS20  <input type=text name=ms20 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms20">	 
+c PMS2000O <option value=0 %s>
+c PSD09 %s</option>
+c PMS2001O <option value=1 %s>
+c PSD10 %s</option> 
+c PMS2002O <option value=2 %s>
+c PSD11 %s</option>
+c PMS2003O <option value=3 %s>
+c PSD12 %s</option>
+c PMS2004O <option value=4 %s>
+c PSD13 %s</option>
+c PMS2005O <option value=5 %s>
+c PSD14 %s</option>
+c PMS2006O <option value=6 %s>
+c PSD15 %s</option>
+c PMS2007O <option value=7 %s>
+c PSD16 %s</option>
+t </select>
+t </td><td>	
+c PMS21  <input type=text name=ms21 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td></td><td>nb scale points</td><td>	
+t <select 
+c PEEWS  %s name="ms22">	 
+c PMS2200O <option value=0 %s>1</option>
+c PMS2201O <option value=1 %s>2</option> 
+c PMS2202O <option value=2 %s>3</option>
+c PMS2203O <option value=3 %s>4</option>
+c PMS2204O <option value=4 %s>5</option>
+t </select>
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+t <h2 align=center><br>Multi Scale Setup ch1+2</h2>
+t <form action=multiscale.cgi method=post name=cgi>
+t <input type=hidden value="ms" name=pg>
+#t <center>
+t <table border=10 width=600><font size="3">
+t <tr bgcolor=#aaccff>
+t  <th width=14%>Point nr</th>
+t  <th width=40%>Scale</th>
+t  <th width=40%>Weight Point</th>
+t </tr>
+t <tr><td>Pt1</td><td>
+#c PMS23  <input type=text name=ms23 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms23">	 
+c PMS2300O <option value=0 %s>
+c PSD17 %s</option>
+c PMS2301O <option value=1 %s>
+c PSD18 %s</option> 
+c PMS2302O <option value=2 %s>
+c PSD19 %s</option>
+c PMS2303O <option value=3 %s>
+c PSD20 %s</option>
+c PMS2304O <option value=4 %s>
+c PSD21 %s</option>
+c PMS2305O <option value=5 %s>
+c PSD22 %s</option>
+c PMS2306O <option value=6 %s>
+c PSD23 %s</option>
+c PMS2307O <option value=7 %s>
+c PSD24 %s</option>
+t </select>
+t </td><td>	
+c PMS24  <input type=text name=ms24 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>	
+t <tr><td>Pt2</td><td>
+#c PMS25  <input type=text name=ms25 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms25">	 
+c PMS2500O <option value=0 %s>
+c PSD17 %s</option>
+c PMS2501O <option value=1 %s>
+c PSD18 %s</option> 
+c PMS2502O <option value=2 %s>
+c PSD19 %s</option>
+c PMS2503O <option value=3 %s>
+c PSD20 %s</option>
+c PMS2504O <option value=4 %s>
+c PSD21 %s</option>
+c PMS2505O <option value=5 %s>
+c PSD22 %s</option>
+c PMS2506O <option value=6 %s>
+c PSD23 %s</option>
+c PMS2507O <option value=7 %s>
+c PSD24 %s</option>
+t </select>
+t </td><td>	
+c PMS26  <input type=text name=ms26 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt3</td><td>
+#c PMS27  <input type=text name=ms27 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms27">	 
+c PMS2700O <option value=0 %s>
+c PSD17 %s</option>
+c PMS2701O <option value=1 %s>
+c PSD18 %s</option> 
+c PMS2702O <option value=2 %s>
+c PSD19 %s</option>
+c PMS2703O <option value=3 %s>
+c PSD20 %s</option>
+c PMS2704O <option value=4 %s>
+c PSD21 %s</option>
+c PMS2705O <option value=5 %s>
+c PSD22 %s</option>
+c PMS2706O <option value=6 %s>
+c PSD23 %s</option>
+c PMS2707O <option value=7 %s>
+c PSD24 %s</option>
+t </select>
+t </td><td>	
+c PMS28  <input type=text name=ms28 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt4</td><td>
+#c PMS29  <input type=text name=ms29 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms29">	 
+c PMS2900O <option value=0 %s>
+c PSD17 %s</option>
+c PMS2901O <option value=1 %s>
+c PSD18 %s</option> 
+c PMS2902O <option value=2 %s>
+c PSD19 %s</option>
+c PMS2903O <option value=3 %s>
+c PSD20 %s</option>
+c PMS2904O <option value=4 %s>
+c PSD21 %s</option>
+c PMS2905O <option value=5 %s>
+c PSD22 %s</option>
+c PMS2906O <option value=6 %s>
+c PSD23 %s</option>
+c PMS2907O <option value=7 %s>
+c PSD24 %s</option>
+t </select>
+t </td><td>	
+c PMS30  <input type=text name=ms30 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td>Pt5</td><td>
+#c PMS31  <input type=text name=ms31 value="%s" size=18 maxlength=8>
+t <select 
+c PEEWS  %s name="ms31">	 
+c PMS3100O <option value=0 %s>
+c PSD17 %s</option>
+c PMS3101O <option value=1 %s>
+c PSD18 %s</option> 
+c PMS3102O <option value=2 %s>
+c PSD19 %s</option>
+c PMS3103O <option value=3 %s>
+c PSD20 %s</option>
+c PMS3104O <option value=4 %s>
+c PSD21 %s</option>
+c PMS3105O <option value=5 %s>
+c PSD22 %s</option>
+c PMS3106O <option value=6 %s>
+c PSD23 %s</option>
+c PMS3107O <option value=7 %s>
+c PSD24 %s</option>
+t </select>
+t </td><td>	
+c PMS32  <input type=text name=ms32 value="%s" 
+c PEEWS  %s size=18 maxlength=8>
+t </td></tr>
+t <tr><td></td><td>nb scale points</td><td>
+t <select 
+c PEEWS  %s name="ms33">	 
+c PMS3300O <option value=0 %s>1</option>
+c PMS3301O <option value=1 %s>2</option> 
+c PMS3302O <option value=2 %s>3</option>
+c PMS3303O <option value=3 %s>4</option>
+c PMS3304O <option value=4 %s>5</option>
+t </select>
+t </td></tr>
+t </font></table>
+t <table width=660>
+t <tr><td p align="center">
+t <input type=submit name=set value="Safe" id="sbm">
+t </p></td></tr></table>
+t </center>
+t </form>
+i pg_footer.inc
+. End of script must be closed with period.

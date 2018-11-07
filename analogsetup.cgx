@@ -1,0 +1,19 @@
+t <form>
+t <text>
+t <id>adc_ch1</id>
+c g 1  <value>%s</value>
+t </text>
+t <text>
+t <id>weight_ch1</id>
+c g 2  <value>%s kg</value>
+t </text>
+t <text>
+t <id>adc_ch2</id>
+c g 3 <value>%s </value>
+t </text>
+t <text>
+t <id>weight_ch2</id>
+c g 4  <value>%s kg</value>
+t </text>
+t </form>
+.
