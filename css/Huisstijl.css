@@ -1,0 +1,211 @@
+﻿body
+{
+    background-color: white;
+    font-size:1em;
+}
+
+a:link
+{
+    text-decoration: none;
+    color: #FFFFFF;
+    text-transform: lowercase;
+}
+
+a:hover
+{
+    text-transform: uppercase;
+    
+}
+
+a:visited
+{
+    color: #FFFFFF;
+}
+
+
+p:first-letter
+{
+    font-size: 1.5em;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+li
+{
+    list-style-image: url('../images/Brainstorming (Small).gif');
+    list-style-position: inside;
+}
+
+#links{
+    float:left;
+    /*width:500px;*/
+    width:40%;
+    /*margin-left:150px;*/
+    margin-left:10%;
+}
+
+#rechts{
+    float:left;
+    /*width:500px;*/
+    width:40%;
+    /*margin-right:150px;*/
+    margin-right:10%;
+}
+
+#links img{
+    margin:0 5% 0 5%;
+    width:90%;
+    height:auto;
+}
+
+#volledig{
+    float:left;
+    /*width:1000px;
+    margin-right:150px;
+    margin-left:150px;*/
+    width:80%;
+    margin-right:10%;
+    margin-left:10%;
+
+}
+
+
+h2{
+    background-color:Gray; 
+    color: #800000; 
+    letter-spacing: 15pt; 
+    text-align: center;
+}
+
+footer{
+    float:left;
+    width:100%;
+    background-color: purple;
+}
+header{
+    float:left;
+    width:100%;
+    height: 300px;
+    background-color: red;
+}
+
+.colom1{
+     float:left;
+    width:23%;
+    height: 780px;
+    text-align:left;
+    background-color: green;
+    margin: 1% 1% 1% 1%;
+    
+}
+.colom2{
+     float:left;
+    width:48%;
+    height: 780px;
+    text-align:left;
+    background-color: blue;
+   margin: 1% 1% 1% 1%;
+    
+}
+.colom3{
+     float:left;
+    width:23%;
+    height: 780px;
+    text-align:left;
+    background-color: purple;
+    margin: 1% 1% 1% 1%;
+    
+}
+
+.eenderdeLinks {
+    float:left;
+    width:33%;
+    text-align:left;
+}
+
+.eenderdeCenter {
+    float:left;
+    width:33%;
+    text-align:center;
+}
+.eenderdeRechts {
+    float:left;
+    width:33%;
+    text-align:right;
+}
+
+@media screen and (max-width:768px) {
+    header{
+    float:left;
+    width:100%;
+    height: 300px;
+    background-color: red;
+}
+
+.colom1{
+     float:left;
+    width:23%;
+    height: 780px;
+    text-align:left;
+    background-color: green;
+    margin: 1% 1% 1% 1%;
+    
+}
+.colom2{
+     float:left;
+    width:73%;
+    height: 780px;
+    text-align:left;
+    background-color: blue;
+   margin: 1% 1% 1% 1%;
+    
+}
+.colom3{
+     float:left;
+    width:100%;
+    height: 780px;
+    text-align:left;
+    background-color: purple;
+    margin: 1% 1% 1% 1%;
+    
+}
+
+}
+@media screen and (max-width:320px) {
+    header{
+    float:left;
+    width:100%;
+    height: 300px;
+    background-color: red;
+}
+
+.colom1{
+     float:left;
+    width:100%;
+    height: 780px;
+    text-align:left;
+    background-color: green;
+    margin: 1% 1% 1% 1%;
+    
+}
+.colom2{
+     float:left;
+    width:48%;
+    height: 780px;
+    text-align:left;
+    background-color: blue;
+   margin: 1% 1% 1% 1%;
+    
+}
+.colom3{
+     float:left;
+    width:48%;
+    height: 780px;
+    text-align:left;
+    background-color: purple;
+    margin: 1% 1% 1% 1%;
+    
+}
+
+}
